@@ -2,4 +2,4 @@
 
 .gitignore
 #忽略App.config
-*App.config
+*.config
