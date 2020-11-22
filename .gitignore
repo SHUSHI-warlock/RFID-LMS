@@ -1,4 +1,5 @@
 #下面是我的gitignore文件的内容
 
+.gitignore
 #忽略App.config
-App.config
+*App.config
