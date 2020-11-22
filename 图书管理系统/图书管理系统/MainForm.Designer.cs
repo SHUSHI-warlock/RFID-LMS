@@ -551,6 +551,7 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "图书管理软件";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.GV_1)).EndInit();

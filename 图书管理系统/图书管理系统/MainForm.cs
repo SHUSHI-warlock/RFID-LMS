@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,10 @@ namespace 图书管理系统
             InitializeComponent();
         }
 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            SqlConnection con = SqlConnect.getConn();
+        }
         /// <summary>
         /// 图书入库
         /// </summary>
@@ -47,11 +52,12 @@ namespace 图书管理系统
             delBookForm adf = new delBookForm();
             adf.ShowDialog();
         }
-       
+
+
 
 
         #endregion
 
-      
+       
     }
 }

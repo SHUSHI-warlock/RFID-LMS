@@ -5,6 +5,10 @@
         /// <summary>
         /// Required designer variable.
         /// </summary>
+        /// 
+        
+
+
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -32,7 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Username = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.Password = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // button1
@@ -72,19 +76,20 @@
             this.Username.Size = new System.Drawing.Size(160, 25);
             this.Username.TabIndex = 3;
             // 
-            // textBox2
+            // Password
             // 
-            this.textBox2.Location = new System.Drawing.Point(202, 140);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 25);
-            this.textBox2.TabIndex = 4;
+            this.Password.Location = new System.Drawing.Point(202, 140);
+            this.Password.Name = "Password";
+            this.Password.PasswordChar = '*';
+            this.Password.Size = new System.Drawing.Size(160, 25);
+            this.Password.TabIndex = 4;
             // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(498, 302);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -102,6 +107,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox Username;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox Password;
     }
 }
