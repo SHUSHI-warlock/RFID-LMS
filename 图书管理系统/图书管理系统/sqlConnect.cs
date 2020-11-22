@@ -17,7 +17,7 @@ namespace 图书管理系统
         /// <summary>
         /// 连接字符串获取
         /// </summary>
-        private static string connectString =  ConfigurationManager.ConnectionStrings["RFIDconnstr"].ConnectionString;
+        private static string connectString =  ConfigurationManager.ConnectionStrings["Connstr"].ConnectionString;
 
         /// <summary>
         /// 建立数据库连接
