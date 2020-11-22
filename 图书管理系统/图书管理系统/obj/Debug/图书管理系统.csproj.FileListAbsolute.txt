@@ -1,0 +1,13 @@
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\bin\Debug\图书管理系统.exe.config
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\bin\Debug\图书管理系统.exe
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\bin\Debug\图书管理系统.pdb
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.csprojAssemblyReference.cache
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.Properties.Resources.resources
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.csproj.GenerateResource.cache
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.csproj.CoreCompileInputs.cache
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.exe
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.pdb
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.LoginForm.resources
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.MainForm.resources
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.addBookFrom.resources
+E:\study\MyCode\vs\C#\RFID\图书管理系统\图书管理系统\obj\Debug\图书管理系统.delBookForm.resources
