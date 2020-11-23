@@ -1,6 +1,6 @@
 ﻿namespace 图书馆借还系统
 {
-    partial class borrowForm1
+    partial class BorrowForm
     {
         /// <summary>
         /// Required designer variable.
@@ -39,7 +39,7 @@
             this.Col1_Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_return = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +53,6 @@
             this.label1.Size = new System.Drawing.Size(139, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "本次借书本数:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // numericUpDown1
             // 
@@ -133,7 +132,6 @@
             this.label2.Size = new System.Drawing.Size(109, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "已选中:X本";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button2
             // 
@@ -145,31 +143,33 @@
             this.button2.Text = "确认提交";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // button_return
             // 
-            this.button3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(447, 393);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(118, 45);
-            this.button3.TabIndex = 6;
-            this.button3.Text = "退出";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button_return.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_return.Location = new System.Drawing.Point(447, 393);
+            this.button_return.Name = "button_return";
+            this.button_return.Size = new System.Drawing.Size(118, 45);
+            this.button_return.TabIndex = 6;
+            this.button_return.Text = "退出";
+            this.button_return.UseVisualStyleBackColor = true;
+            this.button_return.Click += new System.EventHandler(this.LastPage_Click);
             // 
-            // borrowForm1
+            // BorrowForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.ControlBox = false;
+            this.Controls.Add(this.button_return);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.label1);
-            this.Name = "borrowForm1";
-            this.Text = "borrowForm1";
+            this.Name = "BorrowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "借书界面";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -190,6 +190,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn Col1_Checked;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_return;
     }
 }

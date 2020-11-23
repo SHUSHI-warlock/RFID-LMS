@@ -7,19 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace 图书馆借还系统
 {
     public partial class SarchForm : Form
     {
-        public SarchForm()
+        Main main;
+        string pId;
+
+        public SarchForm(Main MainWin)
         {
+            main = MainWin;
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        public void ShowMyWin(string UserId)
         {
-
+            this.Visible = true;
+            pId = UserId;
         }
+
+        private void LastPage_Click(object sender, EventArgs e)
+        {
+            main.ReturnMainWin();
+        }
+
+
+     
+
+        
     }
 }

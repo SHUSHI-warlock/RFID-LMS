@@ -30,12 +30,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Lastp = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.UserPa = new System.Windows.Forms.TextBox();
+            this.UserID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -45,7 +44,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(365, 158);
+            this.label1.Location = new System.Drawing.Point(343, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 20);
             this.label1.TabIndex = 7;
@@ -53,6 +52,7 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Enabled = false;
             this.richTextBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox1.Location = new System.Drawing.Point(120, 89);
             this.richTextBox1.Name = "richTextBox1";
@@ -60,29 +60,21 @@
             this.richTextBox1.TabIndex = 6;
             this.richTextBox1.Text = "请刷读者卡";
             // 
-            // button2
+            // button_Lastp
             // 
-            this.button2.Location = new System.Drawing.Point(455, 340);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "下一步";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(244, 340);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "上一步";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Lastp.Location = new System.Drawing.Point(321, 345);
+            this.button_Lastp.Name = "button_Lastp";
+            this.button_Lastp.Size = new System.Drawing.Size(92, 38);
+            this.button_Lastp.TabIndex = 4;
+            this.button_Lastp.Text = "返回";
+            this.button_Lastp.UseVisualStyleBackColor = true;
+            this.button_Lastp.Click += new System.EventHandler(this.LastPage_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.UserPa);
+            this.groupBox1.Controls.Add(this.UserID);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(455, 77);
@@ -94,31 +86,33 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(73, 131);
+            this.button3.Location = new System.Drawing.Point(83, 131);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 4;
             this.button3.Text = "登录";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.Login_Click);
             // 
-            // textBox2
+            // UserPa
             // 
-            this.textBox2.Location = new System.Drawing.Point(73, 81);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 25);
-            this.textBox2.TabIndex = 3;
+            this.UserPa.Location = new System.Drawing.Point(57, 76);
+            this.UserPa.Name = "UserPa";
+            this.UserPa.PasswordChar = '*';
+            this.UserPa.Size = new System.Drawing.Size(164, 25);
+            this.UserPa.TabIndex = 3;
             // 
-            // textBox1
+            // UserID
             // 
-            this.textBox1.Location = new System.Drawing.Point(73, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 25);
-            this.textBox1.TabIndex = 2;
+            this.UserID.Location = new System.Drawing.Point(57, 34);
+            this.UserID.Name = "UserID";
+            this.UserID.Size = new System.Drawing.Size(164, 25);
+            this.UserID.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 81);
+            this.label3.Location = new System.Drawing.Point(6, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 15);
             this.label3.TabIndex = 1;
@@ -127,7 +121,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 41);
+            this.label2.Location = new System.Drawing.Point(6, 44);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 15);
             this.label2.TabIndex = 0;
@@ -137,14 +131,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1062, 673);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_Lastp);
             this.Name = "LoginFrom";
-            this.Text = "登录";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "读者登录";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -156,12 +151,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Lastp;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox UserPa;
+        private System.Windows.Forms.TextBox UserID;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
     }

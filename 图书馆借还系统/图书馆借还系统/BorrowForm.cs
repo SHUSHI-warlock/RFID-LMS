@@ -7,23 +7,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace 图书馆借还系统
 {
-    public partial class ReturnForm : Form
+    public partial class BorrowForm : Form
     {
         Main main;
+        string pId = "";
 
-        public ReturnForm(Main MainWin)
+        public BorrowForm(Main MainWin)
         {
             main = MainWin;
             InitializeComponent();
         }
 
-        public void ShowMyWin()
+        public void ShowMyWin(string UserId)
         {
-            this.Visible = true;
+            this.Visible = true;  
+            pId = UserId;
         }
 
         private void LastPage_Click(object sender, EventArgs e)
@@ -31,6 +32,6 @@ namespace 图书馆借还系统
             main.ReturnMainWin();
         }
 
-       
+        
     }
 }

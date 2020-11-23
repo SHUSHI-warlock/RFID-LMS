@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="borrowForm1.cs">
+    <Compile Include="BorrowForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="borrowForm1.Designer.cs">
-      <DependentUpon>borrowForm1.cs</DependentUpon>
+    <Compile Include="BorrowForm.Designer.cs">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginFrom.cs">
       <SubType>Form</SubType>
@@ -72,14 +73,20 @@
     <Compile Include="ReturnForm.Designer.cs">
       <DependentUpon>ReturnForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="RFIDDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RFIDDBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SarchForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SarchForm.Designer.cs">
       <DependentUpon>SarchForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="borrowForm1.resx">
-      <DependentUpon>borrowForm1.cs</DependentUpon>
+    <Compile Include="sqlConnect.cs" />
+    <EmbeddedResource Include="BorrowForm.resx">
+      <DependentUpon>BorrowForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginFrom.resx">
       <DependentUpon>LoginFrom.cs</DependentUpon>
@@ -111,6 +118,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RFIDDBDataSet.xsc">
+      <DependentUpon>RFIDDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RFIDDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RFIDDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RFIDDBDataSet.xss">
+      <DependentUpon>RFIDDBDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
