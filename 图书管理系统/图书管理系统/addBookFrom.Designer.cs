@@ -93,6 +93,7 @@
             this.bt_bookin.TabIndex = 13;
             this.bt_bookin.Text = "添加入库";
             this.bt_bookin.UseVisualStyleBackColor = true;
+            this.bt_bookin.Click += new System.EventHandler(this.bt_bookin_Click);
             // 
             // groupBox2
             // 
@@ -120,6 +121,7 @@
             this.bt_readtag.TabIndex = 0;
             this.bt_readtag.Text = "读取标签";
             this.bt_readtag.UseVisualStyleBackColor = true;
+            this.bt_readtag.Click += new System.EventHandler(this.bt_readtag_Click);
             // 
             // groupBox1
             // 
@@ -185,6 +187,9 @@
             this.cbb_class.Items.AddRange(new object[] {
             "数学",
             "英语",
+            "文学",
+            "物理",
+            "化学",
             "计算机"});
             this.cbb_class.Location = new System.Drawing.Point(86, 122);
             this.cbb_class.Name = "cbb_class";

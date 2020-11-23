@@ -128,51 +128,67 @@
             this.GV_1.Location = new System.Drawing.Point(10, 47);
             this.GV_1.Name = "GV_1";
             this.GV_1.ReadOnly = true;
+            this.GV_1.RowHeadersWidth = 51;
             this.GV_1.RowTemplate.Height = 27;
-            this.GV_1.Size = new System.Drawing.Size(746, 452);
+            this.GV_1.Size = new System.Drawing.Size(930, 452);
             this.GV_1.TabIndex = 3;
+            this.GV_1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_1_CellContentClick);
             // 
             // Col1_BookId
             // 
             this.Col1_BookId.HeaderText = "书籍ID";
+            this.Col1_BookId.MinimumWidth = 6;
             this.Col1_BookId.Name = "Col1_BookId";
             this.Col1_BookId.ReadOnly = true;
+            this.Col1_BookId.Width = 125;
             // 
             // Col1_BookName
             // 
             this.Col1_BookName.HeaderText = "书名";
+            this.Col1_BookName.MinimumWidth = 6;
             this.Col1_BookName.Name = "Col1_BookName";
             this.Col1_BookName.ReadOnly = true;
+            this.Col1_BookName.Width = 125;
             // 
             // Col1_Author
             // 
             this.Col1_Author.HeaderText = "作者";
+            this.Col1_Author.MinimumWidth = 6;
             this.Col1_Author.Name = "Col1_Author";
             this.Col1_Author.ReadOnly = true;
+            this.Col1_Author.Width = 125;
             // 
             // Col1_Class
             // 
             this.Col1_Class.HeaderText = "分类";
+            this.Col1_Class.MinimumWidth = 6;
             this.Col1_Class.Name = "Col1_Class";
             this.Col1_Class.ReadOnly = true;
+            this.Col1_Class.Width = 125;
             // 
             // Col1_AllNum
             // 
             this.Col1_AllNum.HeaderText = "总库存";
+            this.Col1_AllNum.MinimumWidth = 6;
             this.Col1_AllNum.Name = "Col1_AllNum";
             this.Col1_AllNum.ReadOnly = true;
+            this.Col1_AllNum.Width = 125;
             // 
             // Col1_NowNum
             // 
             this.Col1_NowNum.HeaderText = "当前馆存";
+            this.Col1_NowNum.MinimumWidth = 6;
             this.Col1_NowNum.Name = "Col1_NowNum";
             this.Col1_NowNum.ReadOnly = true;
+            this.Col1_NowNum.Width = 125;
             // 
             // Col1_tag
             // 
             this.Col1_tag.HeaderText = "标签号";
+            this.Col1_tag.MinimumWidth = 6;
             this.Col1_tag.Name = "Col1_tag";
             this.Col1_tag.ReadOnly = true;
+            this.Col1_tag.Width = 125;
             // 
             // flowLayoutPanel1
             // 
@@ -301,20 +317,26 @@
             this.Col2_Password});
             this.dataGridView1.Location = new System.Drawing.Point(28, 69);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(469, 234);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Col2_ID
             // 
             this.Col2_ID.HeaderText = "读者ID";
+            this.Col2_ID.MinimumWidth = 6;
             this.Col2_ID.Name = "Col2_ID";
             this.Col2_ID.ReadOnly = true;
+            this.Col2_ID.Width = 125;
             // 
             // Col2_Password
             // 
             this.Col2_Password.HeaderText = "密码";
+            this.Col2_Password.MinimumWidth = 6;
             this.Col2_Password.Name = "Col2_Password";
+            this.Col2_Password.Width = 125;
             // 
             // flowLayoutPanel2
             // 
@@ -408,6 +430,7 @@
             this.dataGridView2.Location = new System.Drawing.Point(19, 57);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
             this.dataGridView2.Size = new System.Drawing.Size(856, 408);
             this.dataGridView2.TabIndex = 1;
@@ -415,38 +438,50 @@
             // Col_ReaderID
             // 
             this.Col_ReaderID.HeaderText = "读者ID";
+            this.Col_ReaderID.MinimumWidth = 6;
             this.Col_ReaderID.Name = "Col_ReaderID";
             this.Col_ReaderID.ReadOnly = true;
+            this.Col_ReaderID.Width = 125;
             // 
             // Col_BookId2
             // 
             this.Col_BookId2.HeaderText = "书号";
+            this.Col_BookId2.MinimumWidth = 6;
             this.Col_BookId2.Name = "Col_BookId2";
             this.Col_BookId2.ReadOnly = true;
+            this.Col_BookId2.Width = 125;
             // 
             // Col3_StartDay
             // 
             this.Col3_StartDay.HeaderText = "借阅日期";
+            this.Col3_StartDay.MinimumWidth = 6;
             this.Col3_StartDay.Name = "Col3_StartDay";
             this.Col3_StartDay.ReadOnly = true;
+            this.Col3_StartDay.Width = 125;
             // 
             // Col3_Deadline
             // 
             this.Col3_Deadline.HeaderText = "借阅期限";
+            this.Col3_Deadline.MinimumWidth = 6;
             this.Col3_Deadline.Name = "Col3_Deadline";
             this.Col3_Deadline.ReadOnly = true;
+            this.Col3_Deadline.Width = 125;
             // 
             // Col3_ReadDay
             // 
             this.Col3_ReadDay.HeaderText = "已借天数";
+            this.Col3_ReadDay.MinimumWidth = 6;
             this.Col3_ReadDay.Name = "Col3_ReadDay";
             this.Col3_ReadDay.ReadOnly = true;
+            this.Col3_ReadDay.Width = 125;
             // 
             // Col_IsReturn
             // 
             this.Col_IsReturn.HeaderText = "是否归还";
+            this.Col_IsReturn.MinimumWidth = 6;
             this.Col_IsReturn.Name = "Col_IsReturn";
             this.Col_IsReturn.ReadOnly = true;
+            this.Col_IsReturn.Width = 125;
             // 
             // flowLayoutPanel3
             // 

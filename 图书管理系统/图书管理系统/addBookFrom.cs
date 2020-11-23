@@ -27,6 +27,16 @@ namespace 图书管理系统
             //关闭子窗口
             this.Close();
         }
+        private void bt_bookin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_readtag_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
         ///禁用 最小化 关闭 放大
         ///

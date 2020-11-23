@@ -56,8 +56,17 @@ namespace 图书管理系统
 
 
 
+
         #endregion
 
-       
+        private void GV_1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
