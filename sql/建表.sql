@@ -81,8 +81,8 @@ create table T_Borrow
 (
 	P_Id Varchar(20)  NOT NULL,
 	L_Id Varchar(20) NOT NULL,
+	BR_Start DateTime NOT NULL,
 	B_Id Varchar(20)  NOT NULL ,
-	BR_Start TIMESTAMP NOT NULL,
 	BR_Time int NOT NULL,	/*ÌìÊý*/
 	BR_IsReturn int,
 	foreign key(P_Id)references T_People(P_Id),

@@ -35,7 +35,9 @@ namespace 图书馆借还系统
             BForm = new BorrowForm(this);
             RForm = new ReturnForm(this);
             LForm = new LoginFrom(this); 
-            SForm = new SarchForm(this); 
+            SForm = new SarchForm(this);
+
+           
         }
 
         private void HideAllWin()
@@ -84,5 +86,9 @@ namespace 图书馆借还系统
         {
             Enter2Win(strLF, strSF);
         }
+
+       
+
+      
     }
 }

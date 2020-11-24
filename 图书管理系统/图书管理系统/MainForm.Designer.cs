@@ -50,8 +50,6 @@
             this.bt_delbook = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Col2_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col2_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -61,12 +59,6 @@
             this.bt_delReader = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Col_ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_BookId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_Deadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col3_ReadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col_IsReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -77,6 +69,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bt_searchMark = new System.Windows.Forms.Button();
+            this.Col2_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col2_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col2_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_Label = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_BookId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_Deadline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col3_ReadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col_IsReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GV_1)).BeginInit();
@@ -314,6 +316,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col2_ID,
+            this.Col2_Name,
             this.Col2_Password});
             this.dataGridView1.Location = new System.Drawing.Point(28, 69);
             this.dataGridView1.Name = "dataGridView1";
@@ -322,21 +325,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(469, 234);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // Col2_ID
-            // 
-            this.Col2_ID.HeaderText = "读者ID";
-            this.Col2_ID.MinimumWidth = 6;
-            this.Col2_ID.Name = "Col2_ID";
-            this.Col2_ID.ReadOnly = true;
-            this.Col2_ID.Width = 125;
-            // 
-            // Col2_Password
-            // 
-            this.Col2_Password.HeaderText = "密码";
-            this.Col2_Password.MinimumWidth = 6;
-            this.Col2_Password.Name = "Col2_Password";
-            this.Col2_Password.Width = 125;
             // 
             // flowLayoutPanel2
             // 
@@ -422,6 +410,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_ReaderID,
+            this.Col_Label,
             this.Col_BookId2,
             this.Col3_StartDay,
             this.Col3_Deadline,
@@ -434,54 +423,6 @@
             this.dataGridView2.RowTemplate.Height = 27;
             this.dataGridView2.Size = new System.Drawing.Size(856, 408);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // Col_ReaderID
-            // 
-            this.Col_ReaderID.HeaderText = "读者ID";
-            this.Col_ReaderID.MinimumWidth = 6;
-            this.Col_ReaderID.Name = "Col_ReaderID";
-            this.Col_ReaderID.ReadOnly = true;
-            this.Col_ReaderID.Width = 125;
-            // 
-            // Col_BookId2
-            // 
-            this.Col_BookId2.HeaderText = "书号";
-            this.Col_BookId2.MinimumWidth = 6;
-            this.Col_BookId2.Name = "Col_BookId2";
-            this.Col_BookId2.ReadOnly = true;
-            this.Col_BookId2.Width = 125;
-            // 
-            // Col3_StartDay
-            // 
-            this.Col3_StartDay.HeaderText = "借阅日期";
-            this.Col3_StartDay.MinimumWidth = 6;
-            this.Col3_StartDay.Name = "Col3_StartDay";
-            this.Col3_StartDay.ReadOnly = true;
-            this.Col3_StartDay.Width = 125;
-            // 
-            // Col3_Deadline
-            // 
-            this.Col3_Deadline.HeaderText = "借阅期限";
-            this.Col3_Deadline.MinimumWidth = 6;
-            this.Col3_Deadline.Name = "Col3_Deadline";
-            this.Col3_Deadline.ReadOnly = true;
-            this.Col3_Deadline.Width = 125;
-            // 
-            // Col3_ReadDay
-            // 
-            this.Col3_ReadDay.HeaderText = "已借天数";
-            this.Col3_ReadDay.MinimumWidth = 6;
-            this.Col3_ReadDay.Name = "Col3_ReadDay";
-            this.Col3_ReadDay.ReadOnly = true;
-            this.Col3_ReadDay.Width = 125;
-            // 
-            // Col_IsReturn
-            // 
-            this.Col_IsReturn.HeaderText = "是否归还";
-            this.Col_IsReturn.MinimumWidth = 6;
-            this.Col_IsReturn.Name = "Col_IsReturn";
-            this.Col_IsReturn.ReadOnly = true;
-            this.Col_IsReturn.Width = 125;
             // 
             // flowLayoutPanel3
             // 
@@ -578,6 +519,80 @@
             this.bt_searchMark.Text = "查询";
             this.bt_searchMark.UseVisualStyleBackColor = true;
             // 
+            // Col2_ID
+            // 
+            this.Col2_ID.HeaderText = "读者ID";
+            this.Col2_ID.MinimumWidth = 6;
+            this.Col2_ID.Name = "Col2_ID";
+            this.Col2_ID.ReadOnly = true;
+            this.Col2_ID.Width = 125;
+            // 
+            // Col2_Name
+            // 
+            this.Col2_Name.HeaderText = "姓名";
+            this.Col2_Name.Name = "Col2_Name";
+            // 
+            // Col2_Password
+            // 
+            this.Col2_Password.HeaderText = "密码";
+            this.Col2_Password.MinimumWidth = 6;
+            this.Col2_Password.Name = "Col2_Password";
+            this.Col2_Password.Width = 125;
+            // 
+            // Col_ReaderID
+            // 
+            this.Col_ReaderID.HeaderText = "读者ID";
+            this.Col_ReaderID.MinimumWidth = 6;
+            this.Col_ReaderID.Name = "Col_ReaderID";
+            this.Col_ReaderID.ReadOnly = true;
+            this.Col_ReaderID.Width = 125;
+            // 
+            // Col_Label
+            // 
+            this.Col_Label.HeaderText = "标签";
+            this.Col_Label.Name = "Col_Label";
+            this.Col_Label.ReadOnly = true;
+            // 
+            // Col_BookId2
+            // 
+            this.Col_BookId2.HeaderText = "书号";
+            this.Col_BookId2.MinimumWidth = 6;
+            this.Col_BookId2.Name = "Col_BookId2";
+            this.Col_BookId2.ReadOnly = true;
+            this.Col_BookId2.Width = 125;
+            // 
+            // Col3_StartDay
+            // 
+            this.Col3_StartDay.HeaderText = "借阅日期";
+            this.Col3_StartDay.MinimumWidth = 6;
+            this.Col3_StartDay.Name = "Col3_StartDay";
+            this.Col3_StartDay.ReadOnly = true;
+            this.Col3_StartDay.Width = 125;
+            // 
+            // Col3_Deadline
+            // 
+            this.Col3_Deadline.HeaderText = "借阅期限";
+            this.Col3_Deadline.MinimumWidth = 6;
+            this.Col3_Deadline.Name = "Col3_Deadline";
+            this.Col3_Deadline.ReadOnly = true;
+            this.Col3_Deadline.Width = 125;
+            // 
+            // Col3_ReadDay
+            // 
+            this.Col3_ReadDay.HeaderText = "已借天数";
+            this.Col3_ReadDay.MinimumWidth = 6;
+            this.Col3_ReadDay.Name = "Col3_ReadDay";
+            this.Col3_ReadDay.ReadOnly = true;
+            this.Col3_ReadDay.Width = 125;
+            // 
+            // Col_IsReturn
+            // 
+            this.Col_IsReturn.HeaderText = "是否归还";
+            this.Col_IsReturn.MinimumWidth = 6;
+            this.Col_IsReturn.Name = "Col_IsReturn";
+            this.Col_IsReturn.ReadOnly = true;
+            this.Col_IsReturn.Width = 125;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -643,13 +658,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_AllNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_tag;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button bt_searchMark;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ReaderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col_Label;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BookId2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_StartDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Deadline;

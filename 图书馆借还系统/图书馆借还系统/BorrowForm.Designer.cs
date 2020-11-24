@@ -29,19 +29,17 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Col1_Reader = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col1_BookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BookNum = new System.Windows.Forms.NumericUpDown();
+            this.button_ReadInfo = new System.Windows.Forms.Button();
+            this.GridView_Borrow = new System.Windows.Forms.DataGridView();
             this.Col1_BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col1_Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col1_Checked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Col1_Label = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col1_BookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Col1_Time = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Submmit = new System.Windows.Forms.Button();
             this.button_return = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BookNum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Borrow)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -54,56 +52,44 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "本次借书本数:";
             // 
-            // numericUpDown1
+            // BookNum
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(190, 35);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.BookNum.Location = new System.Drawing.Point(190, 35);
+            this.BookNum.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 25);
-            this.numericUpDown1.TabIndex = 1;
+            this.BookNum.Name = "BookNum";
+            this.BookNum.Size = new System.Drawing.Size(120, 25);
+            this.BookNum.TabIndex = 1;
             // 
-            // button1
+            // button_ReadInfo
             // 
-            this.button1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(521, 35);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 68);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "读取书籍信息";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_ReadInfo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_ReadInfo.Location = new System.Drawing.Point(521, 35);
+            this.button_ReadInfo.Name = "button_ReadInfo";
+            this.button_ReadInfo.Size = new System.Drawing.Size(202, 68);
+            this.button_ReadInfo.TabIndex = 2;
+            this.button_ReadInfo.Text = "读取书籍信息";
+            this.button_ReadInfo.UseVisualStyleBackColor = true;
+            this.button_ReadInfo.Click += new System.EventHandler(this.button_ReadInfo_Click);
             // 
-            // dataGridView1
+            // GridView_Borrow
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col1_Reader,
-            this.Col1_BookId,
+            this.GridView_Borrow.AllowUserToAddRows = false;
+            this.GridView_Borrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_Borrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col1_BookName,
-            this.Col1_Status,
-            this.Col1_Checked});
-            this.dataGridView1.Location = new System.Drawing.Point(48, 120);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(675, 238);
-            this.dataGridView1.TabIndex = 3;
-            // 
-            // Col1_Reader
-            // 
-            this.Col1_Reader.HeaderText = "读者ID";
-            this.Col1_Reader.Name = "Col1_Reader";
-            this.Col1_Reader.ReadOnly = true;
-            // 
-            // Col1_BookId
-            // 
-            this.Col1_BookId.HeaderText = "书号";
-            this.Col1_BookId.Name = "Col1_BookId";
-            this.Col1_BookId.ReadOnly = true;
+            this.Col1_Label,
+            this.Col1_BookId,
+            this.Col1_Time});
+            this.GridView_Borrow.Location = new System.Drawing.Point(48, 120);
+            this.GridView_Borrow.Name = "GridView_Borrow";
+            this.GridView_Borrow.ReadOnly = true;
+            this.GridView_Borrow.RowTemplate.Height = 27;
+            this.GridView_Borrow.Size = new System.Drawing.Size(675, 238);
+            this.GridView_Borrow.TabIndex = 3;
             // 
             // Col1_BookName
             // 
@@ -111,37 +97,34 @@
             this.Col1_BookName.Name = "Col1_BookName";
             this.Col1_BookName.ReadOnly = true;
             // 
-            // Col1_Status
+            // Col1_Label
             // 
-            this.Col1_Status.HeaderText = "书籍状态";
-            this.Col1_Status.Name = "Col1_Status";
-            this.Col1_Status.ReadOnly = true;
+            this.Col1_Label.HeaderText = "标签";
+            this.Col1_Label.Name = "Col1_Label";
+            this.Col1_Label.ReadOnly = true;
             // 
-            // Col1_Checked
+            // Col1_BookId
             // 
-            this.Col1_Checked.HeaderText = "选择";
-            this.Col1_Checked.Name = "Col1_Checked";
-            this.Col1_Checked.ReadOnly = true;
+            this.Col1_BookId.HeaderText = "书号";
+            this.Col1_BookId.Name = "Col1_BookId";
+            this.Col1_BookId.ReadOnly = true;
             // 
-            // label2
+            // Col1_Time
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label2.Location = new System.Drawing.Point(44, 83);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "已选中:X本";
+            this.Col1_Time.HeaderText = "借阅时长";
+            this.Col1_Time.Name = "Col1_Time";
+            this.Col1_Time.ReadOnly = true;
             // 
-            // button2
+            // Submmit
             // 
-            this.button2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2.Location = new System.Drawing.Point(212, 393);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 45);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "确认提交";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Submmit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Submmit.Location = new System.Drawing.Point(212, 393);
+            this.Submmit.Name = "Submmit";
+            this.Submmit.Size = new System.Drawing.Size(133, 45);
+            this.Submmit.TabIndex = 5;
+            this.Submmit.Text = "确认提交";
+            this.Submmit.UseVisualStyleBackColor = true;
+            this.Submmit.Click += new System.EventHandler(this.Submmit_Click);
             // 
             // button_return
             // 
@@ -161,17 +144,16 @@
             this.ClientSize = new System.Drawing.Size(1062, 673);
             this.ControlBox = false;
             this.Controls.Add(this.button_return);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.Submmit);
+            this.Controls.Add(this.GridView_Borrow);
+            this.Controls.Add(this.button_ReadInfo);
+            this.Controls.Add(this.BookNum);
             this.Controls.Add(this.label1);
             this.Name = "BorrowForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "借书界面";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BookNum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Borrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,16 +162,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Reader;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Status;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Col1_Checked;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.NumericUpDown BookNum;
+        private System.Windows.Forms.Button button_ReadInfo;
+        private System.Windows.Forms.DataGridView GridView_Borrow;
+        private System.Windows.Forms.Button Submmit;
         private System.Windows.Forms.Button button_return;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Label;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Time;
     }
 }

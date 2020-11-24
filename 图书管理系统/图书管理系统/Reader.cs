@@ -33,10 +33,8 @@ namespace 图书管理系统
     }
     interface Reader
     {
-        public List<BookLabel> GetReader()
-        {
-
-        }
+        List<BookLabel> GetReader();
+        List<BookLabel> GetReader(int n);
     }
     class RFIDReader
     {
