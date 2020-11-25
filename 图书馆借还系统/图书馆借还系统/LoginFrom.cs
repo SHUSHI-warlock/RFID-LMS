@@ -17,9 +17,7 @@ namespace 图书馆借还系统
     {
         Main main;
         string nextP;
-        string pId;
-        string pPassword;
-
+        
         public LoginFrom(Main MainWin)
         {
             main = MainWin;
@@ -30,8 +28,8 @@ namespace 图书馆借还系统
         {
             this.Visible = true;
             nextP = NextPage;
-            pId = "";
-            pPassword = "";
+            UserID.Text = "";
+            UserPa.Text = "";
         }
 
         private void LastPage_Click(object sender, EventArgs e)
@@ -57,14 +55,19 @@ namespace 图书馆借还系统
                 DA.Fill(Ds, "ReaderLogin");
 
                 if (Ds.Tables["ReaderLogin"].Rows.Count == 0)
+                {
+                    MessageBox.Show("用户名或密码不正确!");
                     return false;
+                }
+                DataRow r = Ds.Tables["ReaderLogin"].Rows[0];
+                MessageBox.Show("登录成功!\n欢迎:"+r["P_Name"].ToString());
                 return true;
             }
             catch (Exception ex)
             {
 
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("查询线路信息失败");
+                MessageBox.Show("数据库连接失败!\n请与前台工作人员联系");
                 return false;
             }
             finally
@@ -77,14 +80,7 @@ namespace 图书馆借还系统
         {
             //验证是否正确
             if(Verification())
-            {
-                MessageBox.Show("通过");
-                main.Enter2Win(nextP, userid: pId);
-            }
-            else
-            {
-                MessageBox.Show("用户名或密码不正确!");
-            }
+                main.Enter2Win(nextP, userid: UserID.Text);
         }
     }
 }
