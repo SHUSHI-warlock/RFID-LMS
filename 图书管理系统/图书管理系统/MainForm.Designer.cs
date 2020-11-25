@@ -71,12 +71,13 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.bt_searchMark = new System.Windows.Forms.Button();
             this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.bt_Search = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Books)).BeginInit();
@@ -87,6 +88,7 @@
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.flowLayoutPanel3.SuspendLayout();
+            this.flowLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -131,7 +133,7 @@
             this.GridView_Books.ReadOnly = true;
             this.GridView_Books.RowHeadersWidth = 51;
             this.GridView_Books.RowTemplate.Height = 27;
-            this.GridView_Books.Size = new System.Drawing.Size(1067, 421);
+            this.GridView_Books.Size = new System.Drawing.Size(1072, 421);
             this.GridView_Books.TabIndex = 3;
             // 
             // Col1_BookId
@@ -402,6 +404,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.flowLayoutPanel4);
             this.tabPage3.Controls.Add(this.dataGridView2);
             this.tabPage3.Controls.Add(this.flowLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
@@ -423,12 +426,12 @@
             this.Col3_Deadline,
             this.Col3_ReadDay,
             this.Col_IsReturn});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 57);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 109);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(1066, 433);
+            this.dataGridView2.Size = new System.Drawing.Size(1071, 410);
             this.dataGridView2.TabIndex = 1;
             // 
             // Col_ReaderID
@@ -441,7 +444,7 @@
             // 
             // Col_BookId2
             // 
-            this.Col_BookId2.HeaderText = "书号";
+            this.Col_BookId2.HeaderText = "图书号";
             this.Col_BookId2.MinimumWidth = 6;
             this.Col_BookId2.Name = "Col_BookId2";
             this.Col_BookId2.ReadOnly = true;
@@ -485,15 +488,11 @@
             this.flowLayoutPanel3.Controls.Add(this.textBox5);
             this.flowLayoutPanel3.Controls.Add(this.label12);
             this.flowLayoutPanel3.Controls.Add(this.textBox6);
-            this.flowLayoutPanel3.Controls.Add(this.label14);
-            this.flowLayoutPanel3.Controls.Add(this.dateTimePicker1);
-            this.flowLayoutPanel3.Controls.Add(this.label13);
-            this.flowLayoutPanel3.Controls.Add(this.comboBox2);
-            this.flowLayoutPanel3.Controls.Add(this.bt_searchMark);
+            this.flowLayoutPanel3.Controls.Add(this.bt_Search);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 51);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 75);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // label11
@@ -501,84 +500,96 @@
             this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label11.Location = new System.Drawing.Point(3, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(83, 31);
+            this.label11.Size = new System.Drawing.Size(133, 31);
             this.label11.TabIndex = 0;
             this.label11.Text = "读者ID:";
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(92, 3);
+            this.textBox5.Location = new System.Drawing.Point(142, 3);
             this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 25);
+            this.textBox5.Size = new System.Drawing.Size(186, 25);
             this.textBox5.TabIndex = 1;
             // 
             // label12
             // 
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(198, 0);
+            this.label12.Location = new System.Drawing.Point(334, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(61, 31);
+            this.label12.Size = new System.Drawing.Size(131, 31);
             this.label12.TabIndex = 2;
             this.label12.Text = "书号:";
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(265, 3);
+            this.textBox6.Location = new System.Drawing.Point(471, 3);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 25);
+            this.textBox6.Size = new System.Drawing.Size(206, 25);
             this.textBox6.TabIndex = 3;
-            // 
-            // label14
-            // 
-            this.label14.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label14.Location = new System.Drawing.Point(371, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(99, 31);
-            this.label14.TabIndex = 7;
-            this.label14.Text = "借阅日期:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(476, 3);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 25);
-            this.dateTimePicker1.TabIndex = 8;
-            // 
-            // label13
-            // 
-            this.label13.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label13.Location = new System.Drawing.Point(682, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(63, 31);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "状态:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "借阅中",
-            "已还",
-            "超时未还"});
-            this.comboBox2.Location = new System.Drawing.Point(751, 3);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(94, 23);
-            this.comboBox2.TabIndex = 5;
-            // 
-            // bt_searchMark
-            // 
-            this.bt_searchMark.Location = new System.Drawing.Point(851, 3);
-            this.bt_searchMark.Name = "bt_searchMark";
-            this.bt_searchMark.Size = new System.Drawing.Size(108, 44);
-            this.bt_searchMark.TabIndex = 6;
-            this.bt_searchMark.Text = "查询";
-            this.bt_searchMark.UseVisualStyleBackColor = true;
             // 
             // Col1_tag
             // 
             this.Col1_tag.MinimumWidth = 6;
             this.Col1_tag.Name = "Col1_tag";
             this.Col1_tag.Width = 125;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.dateTimePicker2);
+            this.flowLayoutPanel4.Controls.Add(this.label4);
+            this.flowLayoutPanel4.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 75);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1113, 34);
+            this.flowLayoutPanel4.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 31);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "借阅日期:";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(142, 3);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(186, 25);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(334, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 31);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "状态:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "借阅中",
+            "已还",
+            "超时未还"});
+            this.comboBox1.Location = new System.Drawing.Point(471, 3);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(206, 23);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // bt_Search
+            // 
+            this.bt_Search.Location = new System.Drawing.Point(683, 3);
+            this.bt_Search.Name = "bt_Search";
+            this.bt_Search.Size = new System.Drawing.Size(118, 62);
+            this.bt_Search.TabIndex = 7;
+            this.bt_Search.Text = "查询";
+            this.bt_Search.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -602,6 +613,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
+            this.flowLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -636,14 +648,9 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button bt_searchMark;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ReaderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BookId2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_StartDay;
@@ -657,6 +664,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Class;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_AllNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button bt_Search;
     }
 }
 
