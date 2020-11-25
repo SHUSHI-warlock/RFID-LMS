@@ -423,12 +423,12 @@
             this.Col3_Deadline,
             this.Col3_ReadDay,
             this.Col_IsReturn});
-            this.dataGridView2.Location = new System.Drawing.Point(19, 57);
+            this.dataGridView2.Location = new System.Drawing.Point(7, 57);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(856, 408);
+            this.dataGridView2.Size = new System.Drawing.Size(1066, 433);
             this.dataGridView2.TabIndex = 1;
             // 
             // Col_ReaderID
@@ -493,7 +493,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 43);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 51);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // label11
@@ -569,7 +569,7 @@
             // 
             this.bt_searchMark.Location = new System.Drawing.Point(851, 3);
             this.bt_searchMark.Name = "bt_searchMark";
-            this.bt_searchMark.Size = new System.Drawing.Size(75, 28);
+            this.bt_searchMark.Size = new System.Drawing.Size(108, 44);
             this.bt_searchMark.TabIndex = 6;
             this.bt_searchMark.Text = "查询";
             this.bt_searchMark.UseVisualStyleBackColor = true;
