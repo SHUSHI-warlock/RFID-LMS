@@ -26,7 +26,11 @@ namespace 图书管理系统
         public static SqlConnection getConn()
         {
             SqlConnection con = new SqlConnection(connectString);
-            Console.WriteLine("连接成功");
+            con.Open();
+            if (con.State == ConnectionState.Open)
+                Console.WriteLine("连接成功");
+            else
+                Console.WriteLine("连接失败");
             return con;
         }
     }

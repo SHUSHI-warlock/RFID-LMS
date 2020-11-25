@@ -30,21 +30,20 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.GV_1 = new System.Windows.Forms.DataGridView();
+            this.GridView_Books = new System.Windows.Forms.DataGridView();
             this.Col1_BookId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1_BookName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1_Author = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1_Class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1_AllNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col1_NowNum = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_BookName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_author = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cb_class = new System.Windows.Forms.ComboBox();
             this.bt_searchbook = new System.Windows.Forms.Button();
             this.bt_addbook = new System.Windows.Forms.Button();
             this.bt_delbook = new System.Windows.Forms.Button();
@@ -77,9 +76,10 @@
             this.label13 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.bt_searchMark = new System.Windows.Forms.Button();
+            this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.GV_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Books)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -97,46 +97,46 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1051, 562);
+            this.tabControl1.Size = new System.Drawing.Size(1121, 562);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.GV_1);
+            this.tabPage1.Controls.Add(this.GridView_Books);
             this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1043, 533);
+            this.tabPage1.Size = new System.Drawing.Size(1113, 533);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "图书信息管理";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
-            // GV_1
+            // GridView_Books
             // 
-            this.GV_1.AllowUserToAddRows = false;
-            this.GV_1.AllowUserToDeleteRows = false;
-            this.GV_1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.GV_1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.GridView_Books.AllowUserToAddRows = false;
+            this.GridView_Books.AllowUserToDeleteRows = false;
+            this.GridView_Books.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_Books.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col1_BookId,
             this.Col1_BookName,
             this.Col1_Author,
             this.Col1_Class,
             this.Col1_AllNum,
-            this.Col1_NowNum,
-            this.Col1_tag});
-            this.GV_1.Location = new System.Drawing.Point(10, 47);
-            this.GV_1.Name = "GV_1";
-            this.GV_1.ReadOnly = true;
-            this.GV_1.RowHeadersWidth = 51;
-            this.GV_1.RowTemplate.Height = 27;
-            this.GV_1.Size = new System.Drawing.Size(930, 452);
-            this.GV_1.TabIndex = 3;
-            this.GV_1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GV_1_CellContentClick);
+            this.Col1_NowNum});
+            this.GridView_Books.Enabled = false;
+            this.GridView_Books.Location = new System.Drawing.Point(6, 78);
+            this.GridView_Books.Name = "GridView_Books";
+            this.GridView_Books.ReadOnly = true;
+            this.GridView_Books.RowHeadersWidth = 51;
+            this.GridView_Books.RowTemplate.Height = 27;
+            this.GridView_Books.Size = new System.Drawing.Size(1067, 421);
+            this.GridView_Books.TabIndex = 3;
             // 
             // Col1_BookId
             // 
-            this.Col1_BookId.HeaderText = "书籍ID";
+            this.Col1_BookId.HeaderText = "图书号";
             this.Col1_BookId.MinimumWidth = 6;
             this.Col1_BookId.Name = "Col1_BookId";
             this.Col1_BookId.ReadOnly = true;
@@ -144,7 +144,7 @@
             // 
             // Col1_BookName
             // 
-            this.Col1_BookName.HeaderText = "书名";
+            this.Col1_BookName.HeaderText = "图书名";
             this.Col1_BookName.MinimumWidth = 6;
             this.Col1_BookName.Name = "Col1_BookName";
             this.Col1_BookName.ReadOnly = true;
@@ -182,29 +182,21 @@
             this.Col1_NowNum.ReadOnly = true;
             this.Col1_NowNum.Width = 125;
             // 
-            // Col1_tag
-            // 
-            this.Col1_tag.HeaderText = "标签号";
-            this.Col1_tag.MinimumWidth = 6;
-            this.Col1_tag.Name = "Col1_tag";
-            this.Col1_tag.ReadOnly = true;
-            this.Col1_tag.Width = 125;
-            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.label6);
-            this.flowLayoutPanel1.Controls.Add(this.textBox1);
+            this.flowLayoutPanel1.Controls.Add(this.tb_BookName);
             this.flowLayoutPanel1.Controls.Add(this.label7);
-            this.flowLayoutPanel1.Controls.Add(this.textBox2);
+            this.flowLayoutPanel1.Controls.Add(this.tb_author);
             this.flowLayoutPanel1.Controls.Add(this.label8);
-            this.flowLayoutPanel1.Controls.Add(this.comboBox1);
+            this.flowLayoutPanel1.Controls.Add(this.cb_class);
             this.flowLayoutPanel1.Controls.Add(this.bt_searchbook);
             this.flowLayoutPanel1.Controls.Add(this.bt_addbook);
             this.flowLayoutPanel1.Controls.Add(this.bt_delbook);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1037, 38);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1107, 69);
             this.flowLayoutPanel1.TabIndex = 2;
             // 
             // label6
@@ -217,12 +209,12 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "书名:";
             // 
-            // textBox1
+            // tb_BookName
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 25);
-            this.textBox1.TabIndex = 1;
+            this.tb_BookName.Location = new System.Drawing.Point(74, 3);
+            this.tb_BookName.Name = "tb_BookName";
+            this.tb_BookName.Size = new System.Drawing.Size(147, 25);
+            this.tb_BookName.TabIndex = 1;
             // 
             // label7
             // 
@@ -234,12 +226,12 @@
             this.label7.TabIndex = 2;
             this.label7.Text = "作者:";
             // 
-            // textBox2
+            // tb_author
             // 
-            this.textBox2.Location = new System.Drawing.Point(298, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(141, 25);
-            this.textBox2.TabIndex = 3;
+            this.tb_author.Location = new System.Drawing.Point(298, 3);
+            this.tb_author.Name = "tb_author";
+            this.tb_author.Size = new System.Drawing.Size(141, 25);
+            this.tb_author.TabIndex = 3;
             // 
             // label8
             // 
@@ -251,35 +243,40 @@
             this.label8.TabIndex = 4;
             this.label8.Text = "分类:";
             // 
-            // comboBox1
+            // cb_class
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cb_class.FormattingEnabled = true;
+            this.cb_class.Items.AddRange(new object[] {
             "数学",
             "英语",
+            "文学",
+            "物理",
+            "化学",
             "计算机"});
-            this.comboBox1.Location = new System.Drawing.Point(516, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(136, 23);
-            this.comboBox1.TabIndex = 11;
+            this.cb_class.Location = new System.Drawing.Point(516, 3);
+            this.cb_class.Name = "cb_class";
+            this.cb_class.Size = new System.Drawing.Size(136, 23);
+            this.cb_class.TabIndex = 11;
             // 
             // bt_searchbook
             // 
+            this.bt_searchbook.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_searchbook.Location = new System.Drawing.Point(685, 3);
             this.bt_searchbook.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.bt_searchbook.Name = "bt_searchbook";
-            this.bt_searchbook.Size = new System.Drawing.Size(100, 35);
+            this.bt_searchbook.Size = new System.Drawing.Size(108, 45);
             this.bt_searchbook.TabIndex = 12;
             this.bt_searchbook.Text = "查询";
             this.bt_searchbook.UseVisualStyleBackColor = true;
+            this.bt_searchbook.Click += new System.EventHandler(this.bt_searchbook_Click);
             // 
             // bt_addbook
             // 
             this.bt_addbook.AutoSize = true;
-            this.bt_addbook.Location = new System.Drawing.Point(798, 3);
+            this.bt_addbook.Location = new System.Drawing.Point(806, 3);
             this.bt_addbook.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.bt_addbook.Name = "bt_addbook";
-            this.bt_addbook.Size = new System.Drawing.Size(100, 35);
+            this.bt_addbook.Size = new System.Drawing.Size(108, 45);
             this.bt_addbook.TabIndex = 1;
             this.bt_addbook.Text = "图书入库";
             this.bt_addbook.UseVisualStyleBackColor = true;
@@ -288,10 +285,10 @@
             // bt_delbook
             // 
             this.bt_delbook.AutoSize = true;
-            this.bt_delbook.Location = new System.Drawing.Point(911, 3);
+            this.bt_delbook.Location = new System.Drawing.Point(927, 3);
             this.bt_delbook.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.bt_delbook.Name = "bt_delbook";
-            this.bt_delbook.Size = new System.Drawing.Size(104, 35);
+            this.bt_delbook.Size = new System.Drawing.Size(108, 45);
             this.bt_delbook.TabIndex = 2;
             this.bt_delbook.Text = "图书出库";
             this.bt_delbook.UseVisualStyleBackColor = true;
@@ -304,7 +301,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1043, 533);
+            this.tabPage2.Size = new System.Drawing.Size(1113, 533);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "读者信息管理";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -321,7 +318,6 @@
             this.dataGridView1.RowTemplate.Height = 27;
             this.dataGridView1.Size = new System.Drawing.Size(469, 234);
             this.dataGridView1.TabIndex = 1;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Col2_ID
             // 
@@ -349,7 +345,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1037, 46);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1107, 46);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label10
@@ -410,7 +406,7 @@
             this.tabPage3.Controls.Add(this.flowLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1043, 533);
+            this.tabPage3.Size = new System.Drawing.Size(1113, 533);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "借阅信息管理";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -497,7 +493,7 @@
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1043, 43);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 43);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
             // label11
@@ -578,18 +574,24 @@
             this.bt_searchMark.Text = "查询";
             this.bt_searchMark.UseVisualStyleBackColor = true;
             // 
+            // Col1_tag
+            // 
+            this.Col1_tag.MinimumWidth = 6;
+            this.Col1_tag.Name = "Col1_tag";
+            this.Col1_tag.Width = 125;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1083, 584);
+            this.ClientSize = new System.Drawing.Size(1101, 620);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainForm";
             this.Text = "图书管理软件";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.GV_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Books)).EndInit();
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -611,14 +613,14 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button bt_addbook;
-        private System.Windows.Forms.DataGridView GV_1;
+        private System.Windows.Forms.DataGridView GridView_Books;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_BookName;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_author;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_class;
         private System.Windows.Forms.Button bt_searchbook;
         private System.Windows.Forms.Button bt_delbook;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
@@ -636,13 +638,6 @@
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Author;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Class;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_AllNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_tag;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -655,6 +650,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_Deadline;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_ReadDay;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_IsReturn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_tag;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_BookName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Author;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_Class;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_AllNum;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
     }
 }
 

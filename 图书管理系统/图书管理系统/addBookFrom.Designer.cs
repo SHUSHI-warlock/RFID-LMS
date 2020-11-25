@@ -59,14 +59,14 @@
             this.pl_addbook.Controls.Add(this.groupBox1);
             this.pl_addbook.Location = new System.Drawing.Point(12, 12);
             this.pl_addbook.Name = "pl_addbook";
-            this.pl_addbook.Size = new System.Drawing.Size(400, 365);
+            this.pl_addbook.Size = new System.Drawing.Size(491, 471);
             this.pl_addbook.TabIndex = 1;
             // 
             // bt_out_RK
             // 
-            this.bt_out_RK.Location = new System.Drawing.Point(216, 313);
+            this.bt_out_RK.Location = new System.Drawing.Point(311, 390);
             this.bt_out_RK.Name = "bt_out_RK";
-            this.bt_out_RK.Size = new System.Drawing.Size(85, 37);
+            this.bt_out_RK.Size = new System.Drawing.Size(110, 56);
             this.bt_out_RK.TabIndex = 15;
             this.bt_out_RK.Text = "返回";
             this.bt_out_RK.UseVisualStyleBackColor = true;
@@ -79,7 +79,7 @@
             this.label1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(398, 32);
+            this.label1.Size = new System.Drawing.Size(489, 32);
             this.label1.TabIndex = 14;
             this.label1.Text = "图书入库";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -87,9 +87,9 @@
             // bt_bookin
             // 
             this.bt_bookin.AutoSize = true;
-            this.bt_bookin.Location = new System.Drawing.Point(83, 313);
+            this.bt_bookin.Location = new System.Drawing.Point(95, 390);
             this.bt_bookin.Name = "bt_bookin";
-            this.bt_bookin.Size = new System.Drawing.Size(85, 37);
+            this.bt_bookin.Size = new System.Drawing.Size(104, 56);
             this.bt_bookin.TabIndex = 13;
             this.bt_bookin.Text = "添加入库";
             this.bt_bookin.UseVisualStyleBackColor = true;
@@ -99,25 +99,25 @@
             // 
             this.groupBox2.Controls.Add(this.tb_tagtext);
             this.groupBox2.Controls.Add(this.bt_readtag);
-            this.groupBox2.Location = new System.Drawing.Point(9, 230);
+            this.groupBox2.Location = new System.Drawing.Point(9, 268);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(346, 58);
+            this.groupBox2.Size = new System.Drawing.Size(386, 94);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "读取标签";
             // 
             // tb_tagtext
             // 
-            this.tb_tagtext.Location = new System.Drawing.Point(107, 24);
+            this.tb_tagtext.Location = new System.Drawing.Point(130, 39);
             this.tb_tagtext.Name = "tb_tagtext";
-            this.tb_tagtext.Size = new System.Drawing.Size(197, 25);
+            this.tb_tagtext.Size = new System.Drawing.Size(233, 25);
             this.tb_tagtext.TabIndex = 1;
             // 
             // bt_readtag
             // 
-            this.bt_readtag.Location = new System.Drawing.Point(26, 24);
+            this.bt_readtag.Location = new System.Drawing.Point(6, 24);
             this.bt_readtag.Name = "bt_readtag";
-            this.bt_readtag.Size = new System.Drawing.Size(75, 23);
+            this.bt_readtag.Size = new System.Drawing.Size(118, 50);
             this.bt_readtag.TabIndex = 0;
             this.bt_readtag.Text = "读取标签";
             this.bt_readtag.UseVisualStyleBackColor = true;
@@ -135,7 +135,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(9, 55);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(346, 155);
+            this.groupBox1.Size = new System.Drawing.Size(386, 207);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "填写图书信息";
@@ -151,15 +151,15 @@
             // 
             // tb_author
             // 
-            this.tb_author.Location = new System.Drawing.Point(86, 91);
+            this.tb_author.Location = new System.Drawing.Point(86, 114);
             this.tb_author.Name = "tb_author";
-            this.tb_author.Size = new System.Drawing.Size(100, 25);
+            this.tb_author.Size = new System.Drawing.Size(277, 25);
             this.tb_author.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(23, 62);
+            this.label3.Location = new System.Drawing.Point(23, 75);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 15);
             this.label3.TabIndex = 5;
@@ -167,15 +167,15 @@
             // 
             // tb_bookname
             // 
-            this.tb_bookname.Location = new System.Drawing.Point(86, 59);
+            this.tb_bookname.Location = new System.Drawing.Point(86, 72);
             this.tb_bookname.Name = "tb_bookname";
-            this.tb_bookname.Size = new System.Drawing.Size(100, 25);
+            this.tb_bookname.Size = new System.Drawing.Size(277, 25);
             this.tb_bookname.TabIndex = 9;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 94);
+            this.label4.Location = new System.Drawing.Point(23, 117);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 15);
             this.label4.TabIndex = 6;
@@ -191,22 +191,23 @@
             "物理",
             "化学",
             "计算机"});
-            this.cbb_class.Location = new System.Drawing.Point(86, 122);
+            this.cbb_class.Location = new System.Drawing.Point(86, 157);
             this.cbb_class.Name = "cbb_class";
-            this.cbb_class.Size = new System.Drawing.Size(121, 23);
+            this.cbb_class.Size = new System.Drawing.Size(277, 23);
             this.cbb_class.TabIndex = 8;
             // 
             // tb_bookid
             // 
             this.tb_bookid.Location = new System.Drawing.Point(86, 28);
             this.tb_bookid.Name = "tb_bookid";
-            this.tb_bookid.Size = new System.Drawing.Size(100, 25);
+            this.tb_bookid.Size = new System.Drawing.Size(277, 25);
             this.tb_bookid.TabIndex = 4;
+            this.tb_bookid.TextChanged += new System.EventHandler(this.tb_bookid_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(23, 123);
+            this.label5.Location = new System.Drawing.Point(23, 160);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 15);
             this.label5.TabIndex = 7;
@@ -216,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 385);
+            this.ClientSize = new System.Drawing.Size(515, 495);
             this.Controls.Add(this.pl_addbook);
             this.Name = "addBookFrom";
             this.Text = "图书入库";

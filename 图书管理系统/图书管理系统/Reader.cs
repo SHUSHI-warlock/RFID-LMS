@@ -33,17 +33,22 @@ namespace 图书管理系统
     }
     interface Reader
     {
+        List<BookLabel> GetReader();
+    }
+    //RFID读取
+    class RFIDReader : Reader
+    {
         public List<BookLabel> GetReader()
         {
-
+            throw new NotImplementedException();
         }
     }
-    class RFIDReader
+    //文件读取
+    class FileReader : Reader
     {
-
-    }
-    class FileReader
-    {
-
+        public List<BookLabel> GetReader()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

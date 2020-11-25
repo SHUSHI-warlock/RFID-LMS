@@ -26,3 +26,13 @@ E:\study\MyCode\vs\作业与上机\C#\RFID\RFID-LMS\图书管理系统\图书管
 E:\study\MyCode\vs\作业与上机\C#\RFID\RFID-LMS\图书管理系统\图书管理系统\bin\Debug\图书管理系统.pdb
 C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.exe
 C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.pdb
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\bin\Debug\图书管理系统.exe.config
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\bin\Debug\图书管理系统.exe
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\bin\Debug\图书管理系统.pdb
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.csprojAssemblyReference.cache
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.addBookFrom.resources
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.LoginForm.resources
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.MainForm.resources
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.Properties.Resources.resources
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.csproj.GenerateResource.cache
+C:\Users\19705\Desktop\RFID-LMS\图书管理系统\图书管理系统\obj\Debug\图书管理系统.delBookForm.resources
