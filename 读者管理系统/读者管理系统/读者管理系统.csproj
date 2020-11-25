@@ -56,6 +56,18 @@
     <Compile Include="addBookFrom.Designer.cs">
       <DependentUpon>addBookFrom.cs</DependentUpon>
     </Compile>
+    <Compile Include="updatePeopleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updatePeopleForm.Designer.cs">
+      <DependentUpon>updatePeopleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="addPeopleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="addPeopleForm.Designer.cs">
+      <DependentUpon>addPeopleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="delBookForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +97,12 @@
     <Compile Include="sqlConnect.cs" />
     <EmbeddedResource Include="addBookFrom.resx">
       <DependentUpon>addBookFrom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updatePeopleForm.resx">
+      <DependentUpon>updatePeopleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="addPeopleForm.resx">
+      <DependentUpon>addPeopleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="delBookForm.resx">
       <DependentUpon>delBookForm.cs</DependentUpon>
