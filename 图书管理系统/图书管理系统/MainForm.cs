@@ -13,15 +13,23 @@ namespace 图书管理系统
 {
     public partial class MainForm : Form
     {
+        //构造
         public MainForm()
         {
             InitializeComponent();
-            /*this.cb_class.SelectedIndex = -1;
-             this.tb_author.Text = null;
-             this.tb_BookName.Text = null;*/
         }
 
-        //图书入库
+        //MainForm加载
+        #region
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            this.cb_class.SelectedIndex = -1;
+            this.tb_author.Text = null;
+            this.tb_BookName.Text = null;
+        }
+        #endregion
+
+        //图书信息管理——图书入库按钮
         #region
         //点击打开图书入库页面
         private void bt_addbook_Click(object sender, EventArgs e)
@@ -33,7 +41,7 @@ namespace 图书管理系统
         }
         #endregion
 
-        //图书出库按钮
+        //图书信息管理——图书出库按钮
         #region
         //点击打开图书入库页面
         private void bt_delbook_Click(object sender, EventArgs e)
@@ -43,17 +51,7 @@ namespace 图书管理系统
         }
         #endregion
 
-        //初始化
-        #region
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-            this.cb_class.SelectedIndex = -1;
-            this.tb_author.Text = null;
-            this.tb_BookName.Text = null;
-        }
-        #endregion
-
-        //查询按钮
+        //图书信息管理——查询按钮
         #region
         private void bt_searchbook_Click(object sender, EventArgs e)
         {
@@ -103,7 +101,7 @@ namespace 图书管理系统
                 DataSet dataSet = new DataSet();
                 SqlCommand cmd = new SqlCommand(strSQL, conn);
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
-                sqlDataAdapter.Fill(dataSet, "T_Book");
+                sqlDataAdapter.Fill(dataSet, "Books");
                 GridView_Books.Columns["Col1_BookId"].DataPropertyName = "B_Id";
                 GridView_Books.Columns["Col1_BookName"].DataPropertyName = "B_Name";
                 GridView_Books.Columns["Col1_Author"].DataPropertyName = "B_Author";
@@ -111,7 +109,7 @@ namespace 图书管理系统
                 GridView_Books.Columns["Col1_AllNum"].DataPropertyName = "B_CountAll";
                 GridView_Books.Columns["Col1_NowNum"].DataPropertyName = "B_CountNow";
                 GridView_Books.DataSource = dataSet;
-                GridView_Books.DataMember = "T_Book";
+                GridView_Books.DataMember = "Books";
             }
             catch (Exception ex)
             {
@@ -125,9 +123,87 @@ namespace 图书管理系统
         }
         #endregion
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        //借阅信息管理——查询按钮
+        #region
+        private void bt_Search_Click(object sender, EventArgs e)
         {
-
-        }
-    }
+            SqlConnection conn = null;
+            try
+            {
+                conn = SqlConnect.getConn();
+                string strSQL = "select * from T_Borrow ";
+                strSQL = strSQL + "where datediff(dd, BR_Start, " + "'" + this.dateTimePicker.Text.ToString() + "'" + ") = 0 ";
+                if (this.tb_Pid.Text != String.Empty)
+                {
+                    strSQL = strSQL + "and P_Id = " + "'" + this.tb_Pid.Text.ToString().Trim() + "'";
+                }
+                if (this.tb_Bid.Text != String.Empty)
+                {
+                    strSQL = strSQL + "and B_Id = " + "'" + this.tb_Bid.Text.ToString().Trim() + "'";
+                }
+                if (this.cb_states.Text != String.Empty)
+                {
+                    if (this.cb_states.Text.ToString().Equals("已归还"))
+                    {
+                        strSQL = strSQL + "and BR_IsReturn = 1";
+                    }
+                    else if (this.cb_states.Text.ToString().Equals("借阅中"))
+                    {
+                        strSQL = strSQL + "and BR_IsReturn = 0";
+                    }
+                    else if (this.cb_states.Text.ToString().Equals("已超时"))
+                    {
+                        DateTime dateTime = DateTime.Now;
+                        DateTime beginTime = dateTime.AddDays(-30);
+                        strSQL = strSQL + "and datediff(dd, " + "BR_Start, " + "'" + beginTime.ToString().Trim() + "'" + " ) >0";
+                    }
+                }
+                GridView_Borrow.AutoGenerateColumns = false;
+                DataSet dataSet = new DataSet();
+                SqlCommand cmd = new SqlCommand(strSQL, conn);
+                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(cmd);
+                sqlDataAdapter.Fill(dataSet, "Borrows");
+                GridView_Borrow.Columns["Col_ReaderID"].DataPropertyName = "P_Id";
+                GridView_Borrow.Columns["Col_BookId2"].DataPropertyName = "B_Id";
+                GridView_Borrow.Columns["Col3_StartDay"].DataPropertyName = "BR_Start";
+                GridView_Borrow.DataSource = dataSet;
+                GridView_Borrow.DataMember = "Borrows";
+            
+                for (int i = 0; i < GridView_Borrow.Rows.Count; i++)
+                {
+                    DateTime startTime = (DateTime)dataSet.Tables["Borrows"].Rows[i]["BR_Start"];
+                    DateTime deadlineTime = startTime.AddDays(30);
+                    GridView_Borrow.Rows[i].Cells["Col3_Deadline"].Value = deadlineTime.ToString();
+                    if ((int)dataSet.Tables["Borrows"].Rows[i]["BR_IsReturn"] == 1)
+                    {
+                        GridView_Borrow.Rows[i].Cells["Col3_ReadDay"].Value = dataSet.Tables["Borrows"].Rows[i]["BR_Time"].ToString();
+                        GridView_Borrow.Rows[i].Cells["Col_IsReturn"].Value = "已归还";
+                    }
+                    else
+                    {
+                        DateTime nowTime = DateTime.Now;
+                        int readTime = new TimeSpan(nowTime.Ticks - startTime.Ticks).Days;
+                        GridView_Borrow.Rows[i].Cells["Col3_ReadDay"].Value = readTime.ToString();
+                        if (nowTime.CompareTo(deadlineTime) > 0)
+                        {
+                            GridView_Borrow.Rows[i].Cells["Col_IsReturn"].Value = "已超时";
+                        }
+                        else
+                        {
+                            GridView_Borrow.Rows[i].Cells["Col_IsReturn"].Value = "借阅中";
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "未知错误");
+            }
+            finally
+            {
+                conn.Close();
+            }
+         }
+     }
+    #endregion
 }
