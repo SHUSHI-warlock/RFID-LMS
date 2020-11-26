@@ -26,7 +26,6 @@ namespace 图书管理系统
             this.cb_class.SelectedIndex = -1;
             this.tb_author.Text = null;
             this.tb_BookName.Text = null;
-            QueryAllReader();
         }
         #endregion
 
@@ -257,13 +256,66 @@ namespace 图书管理系统
 
         //读者信息管理
         #region
-            //查询所有读者信息函数
-            private void QueryAllReader()
+        //查询所有读者信息函数
+        private void QueryAllReader()
+        {
+            SqlConnection conn = SqlConnect.getConn();
+            try
+            {
+                string sql = "select * from T_People";
+                //创建SqlDataAdapter类的对象
+                SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
+                //创建DataSet类的对象
+                DataSet ds = new DataSet();
+                //使用SqlDataAdapter对象sda将查新结果填充到DataSet对象ds中
+                sda.Fill(ds);
+                //设置表格控件的DataSource属性
+                dataGridView1.DataSource = ds.Tables[0];
+
+                //设置数据表格上显示的列标题
+                dataGridView1.Columns[0].HeaderText = "读者ID";
+                dataGridView1.Columns[1].HeaderText = "名字";
+                dataGridView1.Columns[2].HeaderText = "密码";
+                dataGridView1.Columns[0].Width = 125;
+                dataGridView1.Columns[1].Width = 125;
+                dataGridView1.Columns[2].Width = 125;
+                dataGridView1.Columns[0].MinimumWidth = 6;
+                dataGridView1.Columns[1].MinimumWidth = 6;
+                dataGridView1.Columns[2].MinimumWidth = 6;
+                //设置数据表格为只读
+                dataGridView1.ReadOnly = true;
+                //不允许添加行
+                dataGridView1.AllowUserToAddRows = false;
+                //背景为白色
+                dataGridView1.BackgroundColor = Color.White;
+                //只允许选中单行
+                dataGridView1.MultiSelect = false;
+                //整行选中
+                dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("查询错误！" + ex.Message);
+            }
+            finally
+            {
+                if (conn != null)
+                {
+                    conn.Close();
+                }
+            }
+        }
+        //查询读者按钮函数
+        private void bt_searchReader_Click_1(object sender, EventArgs e)
+        {
+            if (tb_readerid_input.Text.Trim() != "")
             {
                 SqlConnection conn = SqlConnect.getConn();
                 try
                 {
-                    string sql = "select * from T_People";
+                    string sql = "select * from T_People where P_Id= '{0}';";
+                    //填充占位符
+                    sql = string.Format(sql, tb_readerid_input.Text.Trim());
                     //创建SqlDataAdapter类的对象
                     SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
                     //创建DataSet类的对象
@@ -279,7 +331,7 @@ namespace 图书管理系统
                     dataGridView1.Columns[2].HeaderText = "密码";
                     dataGridView1.Columns[0].Width = 125;
                     dataGridView1.Columns[1].Width = 125;
-                    dataGridView1.Columns[2].Width = 125;              
+                    dataGridView1.Columns[2].Width = 125;
                     //设置数据表格为只读
                     dataGridView1.ReadOnly = true;
                     //不允许添加行
@@ -293,7 +345,7 @@ namespace 图书管理系统
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("查询错误！" + ex.Message);
+                    MessageBox.Show("出现错误！" + ex.Message);
                 }
                 finally
                 {
@@ -303,96 +355,70 @@ namespace 图书管理系统
                     }
                 }
             }
-            //查询读者按钮函数
-            private void bt_searchReader_Click_1(object sender, EventArgs e)
+            else
             {
-                if (tb_readerid_input.Text.Trim() != "")
-                {
-                    SqlConnection conn = SqlConnect.getConn();
-                    try
-                    {
-                        string sql = "select * from T_People where P_Id= '{0}';";
-                        //填充占位符
-                        sql = string.Format(sql, tb_readerid_input.Text.Trim());
-                        //创建SqlDataAdapter类的对象
-                        SqlDataAdapter sda = new SqlDataAdapter(sql, conn);
-                        //创建DataSet类的对象
-                        DataSet ds = new DataSet();
-                        //使用SqlDataAdapter对象sda将查新结果填充到DataSet对象ds中
-                        sda.Fill(ds);
-                        //设置表格控件的DataSource属性
-                        dataGridView1.DataSource = ds.Tables[0];
-
-                        //设置数据表格上显示的列标题
-                        dataGridView1.Columns[0].HeaderText = "读者ID";
-                        dataGridView1.Columns[1].HeaderText = "名字";
-                        dataGridView1.Columns[2].HeaderText = "密码";
-                        dataGridView1.Columns[0].Width = 125;
-                        dataGridView1.Columns[1].Width = 125;
-                        dataGridView1.Columns[2].Width = 125;
-                        //设置数据表格为只读
-                        dataGridView1.ReadOnly = true;
-                        //不允许添加行
-                        dataGridView1.AllowUserToAddRows = false;
-                        //背景为白色
-                        dataGridView1.BackgroundColor = Color.White;
-                        //只允许选中单行
-                        dataGridView1.MultiSelect = false;
-                        //整行选中
-                        dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("出现错误！" + ex.Message);
-                    }
-                    finally
-                    {
-                        if (conn != null)
-                        {
-                            conn.Close();
-                        }
-                    }
-                }
+                QueryAllReader();
             }
-            //添加读者按钮函数
-            private void bt_addReader_Click_1(object sender, EventArgs e)
+        }
+        //添加读者按钮函数
+        private void bt_addReader_Click_1(object sender, EventArgs e)
+        {
+            //创建updateForm类的对象，并将课程信息传递给修改界面
+            addPeopleForm addPeople = new addPeopleForm();
+            //弹出修改信息窗口
+            DialogResult dr = addPeople.ShowDialog();
+            //判断是否单击确定按钮
+            if (dr == DialogResult.OK)
             {
-                //创建updateForm类的对象，并将课程信息传递给修改界面
-                addPeopleForm addPeople = new addPeopleForm();
-                //弹出修改信息窗口
-                DialogResult dr = addPeople.ShowDialog();
-                //判断是否单击确定按钮
-                if (dr == DialogResult.OK)
-                {
-                    //调用查询全部读者方法
-                    QueryAllReader();
-                }
+                //调用查询全部读者方法
+                QueryAllReader();
             }
-            //修改读者按钮函数
-            private void bt_changeReader_Click_1(object sender, EventArgs e)
+        }
+        //修改读者按钮函数
+        private void bt_changeReader_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
             {
-               //获取DataGridView控件中的值
-                //获取读者ID
+                MessageBox.Show("没有可修改的记录！");
+            }
+            else
+            {
+                //未选中记录
+                if (dataGridView1.SelectedRows.Count.Equals(0))
+                {
+                    MessageBox.Show("请选中要修改的记录！");
+                    return;
+                }
+                //获取DataGridView控件中的值
                 string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString().Trim();
-                //获取读者名字
                 string name = dataGridView1.SelectedRows[0].Cells[1].Value.ToString().Trim();
-                //获取读者密码
                 string password = dataGridView1.SelectedRows[0].Cells[2].Value.ToString().Trim();
 
-                //创建updateForm类的对象，并将课程信息传递给修改界面
                 updatePeopleForm updatePeople = new updatePeopleForm(id, name, password);
                 //弹出修改信息窗口
                 DialogResult dr = updatePeople.ShowDialog();
                 //判断是否单击确定按钮
                 if (dr == DialogResult.OK)
                 {
-                    //调用查询全部读者方法
                     QueryAllReader();
                 }
             }
-            //删除读者按钮函数
-            private void bt_delReader_Click_1(object sender, EventArgs e)
+        }
+        //删除读者按钮函数
+        private void bt_delReader_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count == 0)
             {
+                MessageBox.Show("没有可删除的记录！");
+            }
+            else
+            {
+                //未选中记录
+                if (dataGridView1.SelectedRows.Count.Equals(0))
+                {
+                    MessageBox.Show("请选中要删除的记录！");
+                    return;
+                }
                 //获取DataGridView控件中选中行的编号列的值
                 int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                 SqlConnection conn = SqlConnect.getConn();
@@ -421,8 +447,10 @@ namespace 图书管理系统
                         conn.Close();
                     }
                 }
-
             }
+        }
+
         #endregion
+
     }
 }

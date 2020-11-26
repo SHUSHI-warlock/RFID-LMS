@@ -79,6 +79,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cb_states = new System.Windows.Forms.ComboBox();
             this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Books)).BeginInit();
@@ -319,49 +323,59 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(28, 69);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 78);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(567, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(1070, 429);
             this.dataGridView1.TabIndex = 1;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.label10);
             this.flowLayoutPanel2.Controls.Add(this.tb_readerid_input);
+            this.flowLayoutPanel2.Controls.Add(this.label5);
             this.flowLayoutPanel2.Controls.Add(this.bt_searchReader);
+            this.flowLayoutPanel2.Controls.Add(this.label9);
             this.flowLayoutPanel2.Controls.Add(this.bt_addReader);
+            this.flowLayoutPanel2.Controls.Add(this.label11);
             this.flowLayoutPanel2.Controls.Add(this.bt_changeReader);
+            this.flowLayoutPanel2.Controls.Add(this.label13);
             this.flowLayoutPanel2.Controls.Add(this.bt_delReader);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1107, 46);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1107, 74);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label10.Font = new System.Drawing.Font("宋体", 12F);
             this.label10.Location = new System.Drawing.Point(3, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 37);
+            this.label10.Size = new System.Drawing.Size(92, 69);
             this.label10.TabIndex = 1;
-            this.label10.Text = "读者ID";
+            this.label10.Text = "读者ID:";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tb_readerid_input
             // 
-            this.tb_readerid_input.Location = new System.Drawing.Point(101, 3);
+            this.tb_readerid_input.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.tb_readerid_input.Font = new System.Drawing.Font("宋体", 12F);
+            this.tb_readerid_input.Location = new System.Drawing.Point(101, 19);
+            this.tb_readerid_input.Multiline = true;
             this.tb_readerid_input.Name = "tb_readerid_input";
-            this.tb_readerid_input.Size = new System.Drawing.Size(100, 25);
+            this.tb_readerid_input.Size = new System.Drawing.Size(168, 34);
             this.tb_readerid_input.TabIndex = 2;
             // 
             // bt_searchReader
             // 
-            this.bt_searchReader.Location = new System.Drawing.Point(207, 3);
+            this.bt_searchReader.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_searchReader.Location = new System.Drawing.Point(432, 3);
             this.bt_searchReader.Name = "bt_searchReader";
-            this.bt_searchReader.Size = new System.Drawing.Size(75, 34);
+            this.bt_searchReader.Size = new System.Drawing.Size(138, 66);
             this.bt_searchReader.TabIndex = 3;
             this.bt_searchReader.Text = "查询";
             this.bt_searchReader.UseVisualStyleBackColor = true;
@@ -369,9 +383,10 @@
             // 
             // bt_addReader
             // 
-            this.bt_addReader.Location = new System.Drawing.Point(288, 3);
+            this.bt_addReader.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_addReader.Location = new System.Drawing.Point(605, 3);
             this.bt_addReader.Name = "bt_addReader";
-            this.bt_addReader.Size = new System.Drawing.Size(100, 34);
+            this.bt_addReader.Size = new System.Drawing.Size(126, 66);
             this.bt_addReader.TabIndex = 4;
             this.bt_addReader.Text = "添加读者";
             this.bt_addReader.UseVisualStyleBackColor = true;
@@ -379,9 +394,10 @@
             // 
             // bt_changeReader
             // 
-            this.bt_changeReader.Location = new System.Drawing.Point(394, 3);
+            this.bt_changeReader.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_changeReader.Location = new System.Drawing.Point(766, 3);
             this.bt_changeReader.Name = "bt_changeReader";
-            this.bt_changeReader.Size = new System.Drawing.Size(100, 34);
+            this.bt_changeReader.Size = new System.Drawing.Size(135, 66);
             this.bt_changeReader.TabIndex = 6;
             this.bt_changeReader.Text = "修改读者";
             this.bt_changeReader.UseVisualStyleBackColor = true;
@@ -389,9 +405,10 @@
             // 
             // bt_delReader
             // 
-            this.bt_delReader.Location = new System.Drawing.Point(500, 3);
+            this.bt_delReader.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_delReader.Location = new System.Drawing.Point(936, 3);
             this.bt_delReader.Name = "bt_delReader";
-            this.bt_delReader.Size = new System.Drawing.Size(92, 34);
+            this.bt_delReader.Size = new System.Drawing.Size(124, 66);
             this.bt_delReader.TabIndex = 5;
             this.bt_delReader.Text = "删除读者";
             this.bt_delReader.UseVisualStyleBackColor = true;
@@ -640,6 +657,43 @@
             this.Col1_tag.Name = "Col1_tag";
             this.Col1_tag.Width = 125;
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(275, 28);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 15);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "                  ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(576, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 15);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "  ";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(737, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(23, 15);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "  ";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(907, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(23, 15);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "  ";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -721,6 +775,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label13;
     }
 }
 

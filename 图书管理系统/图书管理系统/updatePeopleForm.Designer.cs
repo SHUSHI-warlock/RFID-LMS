@@ -87,6 +87,7 @@
             // 
             this.tb_people_id.Location = new System.Drawing.Point(105, 55);
             this.tb_people_id.Name = "tb_people_id";
+            this.tb_people_id.ReadOnly = true;
             this.tb_people_id.Size = new System.Drawing.Size(250, 27);
             this.tb_people_id.TabIndex = 3;
             // 
