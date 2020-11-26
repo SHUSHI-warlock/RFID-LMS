@@ -49,11 +49,9 @@
             this.bt_delbook = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Col2_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Col2_Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_readerid_input = new System.Windows.Forms.TextBox();
             this.bt_searchReader = new System.Windows.Forms.Button();
             this.bt_addReader = new System.Windows.Forms.Button();
             this.bt_changeReader = new System.Windows.Forms.Button();
@@ -322,35 +320,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Col2_ID,
-            this.Col2_Password});
             this.dataGridView1.Location = new System.Drawing.Point(28, 69);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(469, 234);
+            this.dataGridView1.Size = new System.Drawing.Size(567, 234);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // Col2_ID
-            // 
-            this.Col2_ID.HeaderText = "读者ID";
-            this.Col2_ID.MinimumWidth = 6;
-            this.Col2_ID.Name = "Col2_ID";
-            this.Col2_ID.ReadOnly = true;
-            this.Col2_ID.Width = 125;
-            // 
-            // Col2_Password
-            // 
-            this.Col2_Password.HeaderText = "密码";
-            this.Col2_Password.MinimumWidth = 6;
-            this.Col2_Password.Name = "Col2_Password";
-            this.Col2_Password.Width = 125;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.label10);
-            this.flowLayoutPanel2.Controls.Add(this.textBox4);
+            this.flowLayoutPanel2.Controls.Add(this.tb_readerid_input);
             this.flowLayoutPanel2.Controls.Add(this.bt_searchReader);
             this.flowLayoutPanel2.Controls.Add(this.bt_addReader);
             this.flowLayoutPanel2.Controls.Add(this.bt_changeReader);
@@ -370,12 +350,12 @@
             this.label10.TabIndex = 1;
             this.label10.Text = "读者ID";
             // 
-            // textBox4
+            // tb_readerid_input
             // 
-            this.textBox4.Location = new System.Drawing.Point(101, 3);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 25);
-            this.textBox4.TabIndex = 2;
+            this.tb_readerid_input.Location = new System.Drawing.Point(101, 3);
+            this.tb_readerid_input.Name = "tb_readerid_input";
+            this.tb_readerid_input.Size = new System.Drawing.Size(100, 25);
+            this.tb_readerid_input.TabIndex = 2;
             // 
             // bt_searchReader
             // 
@@ -385,33 +365,37 @@
             this.bt_searchReader.TabIndex = 3;
             this.bt_searchReader.Text = "查询";
             this.bt_searchReader.UseVisualStyleBackColor = true;
+            this.bt_searchReader.Click += new System.EventHandler(this.bt_searchReader_Click_1);
             // 
             // bt_addReader
             // 
             this.bt_addReader.Location = new System.Drawing.Point(288, 3);
             this.bt_addReader.Name = "bt_addReader";
-            this.bt_addReader.Size = new System.Drawing.Size(75, 34);
+            this.bt_addReader.Size = new System.Drawing.Size(100, 34);
             this.bt_addReader.TabIndex = 4;
             this.bt_addReader.Text = "添加读者";
             this.bt_addReader.UseVisualStyleBackColor = true;
+            this.bt_addReader.Click += new System.EventHandler(this.bt_addReader_Click_1);
             // 
             // bt_changeReader
             // 
-            this.bt_changeReader.Location = new System.Drawing.Point(369, 3);
+            this.bt_changeReader.Location = new System.Drawing.Point(394, 3);
             this.bt_changeReader.Name = "bt_changeReader";
-            this.bt_changeReader.Size = new System.Drawing.Size(75, 34);
+            this.bt_changeReader.Size = new System.Drawing.Size(100, 34);
             this.bt_changeReader.TabIndex = 6;
             this.bt_changeReader.Text = "修改读者";
             this.bt_changeReader.UseVisualStyleBackColor = true;
+            this.bt_changeReader.Click += new System.EventHandler(this.bt_changeReader_Click_1);
             // 
             // bt_delReader
             // 
-            this.bt_delReader.Location = new System.Drawing.Point(450, 3);
+            this.bt_delReader.Location = new System.Drawing.Point(500, 3);
             this.bt_delReader.Name = "bt_delReader";
-            this.bt_delReader.Size = new System.Drawing.Size(75, 34);
+            this.bt_delReader.Size = new System.Drawing.Size(92, 34);
             this.bt_delReader.TabIndex = 5;
             this.bt_delReader.Text = "删除读者";
             this.bt_delReader.UseVisualStyleBackColor = true;
+            this.bt_delReader.Click += new System.EventHandler(this.bt_delReader_Click_1);
             // 
             // tabPage3
             // 
@@ -703,7 +687,7 @@
         private System.Windows.Forms.Button bt_delbook;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox tb_readerid_input;
         private System.Windows.Forms.Button bt_searchReader;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button bt_addReader;
@@ -713,8 +697,6 @@
         private System.Windows.Forms.TextBox tb_Pid;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Bid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
         private System.Windows.Forms.DataGridView GridView_Borrow;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ReaderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BookId2;
