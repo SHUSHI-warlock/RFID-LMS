@@ -53,21 +53,32 @@ namespace 图书馆借还系统
                 return;
             }
             //读取书籍信息
-            RFIDReader reader = new RFIDReader();
-
+            FileReader reader = new FileReader();
+            
             if (BookList == null)
                 BookList = new List<BookLabel>();
             else
                 BookList.Clear();
-            //List<BookLabel> BookList = reader.GetReader(booknum);
+            //读取书籍
+            BookList = reader.GetReader(booknum);
+            if (BookList==null)
+            {
+                MessageBox.Show("未感应到任何书籍!");
+                return;
+            }
             ///测试
-            booknum = 3;
+            /*booknum = 3;
             BookList.Add(new BookLabel("L0001",false));
             BookList.Add(new BookLabel("L0002", false));
-            BookList.Add(new BookLabel("L0004", true));
-
+            BookList.Add(new BookLabel("L0004", true));*/
             //剔除已经被借走的书籍
-            BookList.RemoveAll(book => book.SIG == true);
+            BookList.RemoveAll(book => book.SIG == false);
+
+            if(BookList.Count()==0)
+            {
+                MessageBox.Show("未感应到任何书籍!");
+                return;
+            }
 
             SqlConnection con = SqlConnect.getConn();
             SqlCommandBuilder sqlBuilderda = new SqlCommandBuilder(da);
@@ -82,7 +93,7 @@ namespace 图书馆借还系统
                 else
                     DS.Tables["books"].Clear();
 
-                //循环遍历读到的标签号，其中剔除掉已经被借走的书籍
+                //循环遍历读到的标签号
                 for (int i = 0; i < BookList.Count(); i++)
                 {
                     //创建查询语句
@@ -145,13 +156,23 @@ namespace 图书馆借还系统
         //提交按钮
         private void Submmit_Click(object sender, EventArgs e)
         {
+            if(BookList==null)
+            {
+                MessageBox.Show("请先读取书籍后再提交！");
+                return;
+            }
+
             //先写卡
-            RFIDReader rFIDReader = new RFIDReader();
+            FileReader fileReader = new FileReader();
             for (int i = 0; i < BookList.Count(); i++)
             {
-                BookList[i].SIG = true;
+                BookList[i].SIG = false;
             }
-            rFIDReader.SetReader(BookList);
+            if (!fileReader.SetReader(BookList))
+            {
+                MessageBox.Show("失败！请勿移动书本！请重新读取后尝试！");
+                return;
+            }
 
             //再写数据库
             //取值
