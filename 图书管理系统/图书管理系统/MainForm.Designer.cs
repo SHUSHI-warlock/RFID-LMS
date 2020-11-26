@@ -60,10 +60,12 @@
             this.bt_delReader = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_time = new System.Windows.Forms.TextBox();
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cb_states = new System.Windows.Forms.ComboBox();
+            this.bt_Null = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bt_Search = new System.Windows.Forms.Button();
             this.GridView_Borrow = new System.Windows.Forms.DataGridView();
             this.Col_ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_BookId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,11 +74,12 @@
             this.Col3_ReadDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_IsReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label11 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.tb_Pid = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.tb_Bid = new System.Windows.Forms.TextBox();
-            this.bt_Search = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_states = new System.Windows.Forms.ComboBox();
             this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -202,8 +205,9 @@
             // 
             // label6
             // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label6.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label6.Location = new System.Drawing.Point(3, 3);
+            this.label6.Location = new System.Drawing.Point(3, 23);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(65, 26);
@@ -212,15 +216,17 @@
             // 
             // tb_BookName
             // 
-            this.tb_BookName.Location = new System.Drawing.Point(74, 3);
+            this.tb_BookName.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tb_BookName.Location = new System.Drawing.Point(74, 23);
             this.tb_BookName.Name = "tb_BookName";
             this.tb_BookName.Size = new System.Drawing.Size(147, 25);
             this.tb_BookName.TabIndex = 1;
             // 
             // label7
             // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label7.Location = new System.Drawing.Point(227, 3);
+            this.label7.Location = new System.Drawing.Point(227, 23);
             this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(65, 26);
@@ -229,15 +235,17 @@
             // 
             // tb_author
             // 
-            this.tb_author.Location = new System.Drawing.Point(298, 3);
+            this.tb_author.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tb_author.Location = new System.Drawing.Point(298, 23);
             this.tb_author.Name = "tb_author";
             this.tb_author.Size = new System.Drawing.Size(141, 25);
             this.tb_author.TabIndex = 3;
             // 
             // label8
             // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label8.Location = new System.Drawing.Point(445, 3);
+            this.label8.Location = new System.Drawing.Point(445, 23);
             this.label8.Margin = new System.Windows.Forms.Padding(3);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(65, 26);
@@ -246,6 +254,7 @@
             // 
             // cb_class
             // 
+            this.cb_class.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.cb_class.FormattingEnabled = true;
             this.cb_class.Items.AddRange(new object[] {
             "数学",
@@ -254,18 +263,19 @@
             "物理",
             "化学",
             "计算机"});
-            this.cb_class.Location = new System.Drawing.Point(516, 3);
+            this.cb_class.Location = new System.Drawing.Point(516, 24);
             this.cb_class.Name = "cb_class";
             this.cb_class.Size = new System.Drawing.Size(136, 23);
             this.cb_class.TabIndex = 11;
             // 
             // bt_searchbook
             // 
+            this.bt_searchbook.Font = new System.Drawing.Font("宋体", 12F);
             this.bt_searchbook.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.bt_searchbook.Location = new System.Drawing.Point(685, 3);
             this.bt_searchbook.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.bt_searchbook.Name = "bt_searchbook";
-            this.bt_searchbook.Size = new System.Drawing.Size(108, 45);
+            this.bt_searchbook.Size = new System.Drawing.Size(108, 66);
             this.bt_searchbook.TabIndex = 12;
             this.bt_searchbook.Text = "查询";
             this.bt_searchbook.UseVisualStyleBackColor = true;
@@ -274,10 +284,11 @@
             // bt_addbook
             // 
             this.bt_addbook.AutoSize = true;
+            this.bt_addbook.Font = new System.Drawing.Font("宋体", 12F);
             this.bt_addbook.Location = new System.Drawing.Point(806, 3);
             this.bt_addbook.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.bt_addbook.Name = "bt_addbook";
-            this.bt_addbook.Size = new System.Drawing.Size(108, 45);
+            this.bt_addbook.Size = new System.Drawing.Size(108, 66);
             this.bt_addbook.TabIndex = 1;
             this.bt_addbook.Text = "图书入库";
             this.bt_addbook.UseVisualStyleBackColor = true;
@@ -286,10 +297,11 @@
             // bt_delbook
             // 
             this.bt_delbook.AutoSize = true;
+            this.bt_delbook.Font = new System.Drawing.Font("宋体", 12F);
             this.bt_delbook.Location = new System.Drawing.Point(927, 3);
             this.bt_delbook.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.bt_delbook.Name = "bt_delbook";
-            this.bt_delbook.Size = new System.Drawing.Size(108, 45);
+            this.bt_delbook.Size = new System.Drawing.Size(110, 66);
             this.bt_delbook.TabIndex = 2;
             this.bt_delbook.Text = "图书出库";
             this.bt_delbook.UseVisualStyleBackColor = true;
@@ -415,54 +427,84 @@
             // 
             // flowLayoutPanel4
             // 
-            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.label2);
+            this.flowLayoutPanel4.Controls.Add(this.tb_time);
             this.flowLayoutPanel4.Controls.Add(this.dateTimePicker);
-            this.flowLayoutPanel4.Controls.Add(this.label4);
-            this.flowLayoutPanel4.Controls.Add(this.cb_states);
+            this.flowLayoutPanel4.Controls.Add(this.bt_Null);
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.bt_Search);
             this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 75);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 43);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1113, 34);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1113, 60);
             this.flowLayoutPanel4.TabIndex = 2;
             // 
-            // label3
+            // label2
             // 
-            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 31);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "借阅日期:";
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label2.Location = new System.Drawing.Point(3, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(160, 31);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "借阅日期：";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tb_time
+            // 
+            this.tb_time.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tb_time.Location = new System.Drawing.Point(169, 19);
+            this.tb_time.Name = "tb_time";
+            this.tb_time.ReadOnly = true;
+            this.tb_time.Size = new System.Drawing.Size(212, 25);
+            this.tb_time.TabIndex = 9;
             // 
             // dateTimePicker
             // 
-            this.dateTimePicker.CustomFormat = "yyyy-mm-dd";
-            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker.Location = new System.Drawing.Point(142, 3);
+            this.dateTimePicker.AllowDrop = true;
+            this.dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dateTimePicker.CalendarFont = new System.Drawing.Font("宋体", 1F);
+            this.dateTimePicker.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.dateTimePicker.Location = new System.Drawing.Point(387, 19);
             this.dateTimePicker.Name = "dateTimePicker";
-            this.dateTimePicker.Size = new System.Drawing.Size(186, 25);
+            this.dateTimePicker.Size = new System.Drawing.Size(20, 25);
             this.dateTimePicker.TabIndex = 8;
+            this.dateTimePicker.ValueChanged += new System.EventHandler(this.dateTimePicker_ValueChanged);
             // 
-            // label4
+            // bt_Null
             // 
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(334, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 31);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "当前状态:";
+            this.bt_Null.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bt_Null.Font = new System.Drawing.Font("宋体", 8F);
+            this.bt_Null.Location = new System.Drawing.Point(413, 19);
+            this.bt_Null.Name = "bt_Null";
+            this.bt_Null.Size = new System.Drawing.Size(105, 25);
+            this.bt_Null.TabIndex = 8;
+            this.bt_Null.Text = "清空时间";
+            this.bt_Null.UseVisualStyleBackColor = true;
+            this.bt_Null.Click += new System.EventHandler(this.bt_Null_Click);
             // 
-            // cb_states
+            // label3
             // 
-            this.cb_states.FormattingEnabled = true;
-            this.cb_states.Items.AddRange(new object[] {
-            "借阅中",
-            "已归还",
-            "已超时"});
-            this.cb_states.Location = new System.Drawing.Point(471, 3);
-            this.cb_states.Name = "cb_states";
-            this.cb_states.Size = new System.Drawing.Size(206, 23);
-            this.cb_states.TabIndex = 5;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(524, 16);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(376, 31);
+            this.label3.TabIndex = 11;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // bt_Search
+            // 
+            this.bt_Search.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.bt_Search.Font = new System.Drawing.Font("宋体", 12F);
+            this.bt_Search.Location = new System.Drawing.Point(906, 3);
+            this.bt_Search.Name = "bt_Search";
+            this.bt_Search.Size = new System.Drawing.Size(94, 57);
+            this.bt_Search.TabIndex = 7;
+            this.bt_Search.Text = "查询";
+            this.bt_Search.UseVisualStyleBackColor = true;
+            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
             // 
             // GridView_Borrow
             // 
@@ -534,58 +576,79 @@
             // 
             // flowLayoutPanel3
             // 
-            this.flowLayoutPanel3.Controls.Add(this.label11);
+            this.flowLayoutPanel3.Controls.Add(this.label1);
             this.flowLayoutPanel3.Controls.Add(this.tb_Pid);
             this.flowLayoutPanel3.Controls.Add(this.label12);
             this.flowLayoutPanel3.Controls.Add(this.tb_Bid);
-            this.flowLayoutPanel3.Controls.Add(this.bt_Search);
+            this.flowLayoutPanel3.Controls.Add(this.label4);
+            this.flowLayoutPanel3.Controls.Add(this.cb_states);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 75);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(1113, 43);
             this.flowLayoutPanel3.TabIndex = 0;
             // 
-            // label11
+            // label1
             // 
-            this.label11.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label11.Location = new System.Drawing.Point(3, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 31);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "读者号：";
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(160, 31);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "读者号：";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tb_Pid
             // 
-            this.tb_Pid.Location = new System.Drawing.Point(142, 3);
+            this.tb_Pid.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tb_Pid.Location = new System.Drawing.Point(169, 3);
             this.tb_Pid.Name = "tb_Pid";
-            this.tb_Pid.Size = new System.Drawing.Size(186, 25);
+            this.tb_Pid.Size = new System.Drawing.Size(149, 25);
             this.tb_Pid.TabIndex = 1;
             // 
             // label12
             // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label12.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label12.Location = new System.Drawing.Point(334, 0);
+            this.label12.Location = new System.Drawing.Point(324, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(131, 31);
+            this.label12.Size = new System.Drawing.Size(125, 31);
             this.label12.TabIndex = 2;
             this.label12.Text = "图书号：";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tb_Bid
             // 
-            this.tb_Bid.Location = new System.Drawing.Point(471, 3);
+            this.tb_Bid.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.tb_Bid.Location = new System.Drawing.Point(455, 3);
             this.tb_Bid.Name = "tb_Bid";
-            this.tb_Bid.Size = new System.Drawing.Size(206, 25);
+            this.tb_Bid.Size = new System.Drawing.Size(163, 25);
             this.tb_Bid.TabIndex = 3;
             // 
-            // bt_Search
+            // label4
             // 
-            this.bt_Search.Location = new System.Drawing.Point(683, 3);
-            this.bt_Search.Name = "bt_Search";
-            this.bt_Search.Size = new System.Drawing.Size(118, 62);
-            this.bt_Search.TabIndex = 7;
-            this.bt_Search.Text = "查询";
-            this.bt_Search.UseVisualStyleBackColor = true;
-            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(624, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(147, 31);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "当前状态：";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cb_states
+            // 
+            this.cb_states.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.cb_states.FormattingEnabled = true;
+            this.cb_states.Items.AddRange(new object[] {
+            "借阅中",
+            "已归还",
+            "已超时"});
+            this.cb_states.Location = new System.Drawing.Point(777, 4);
+            this.cb_states.Name = "cb_states";
+            this.cb_states.Size = new System.Drawing.Size(123, 23);
+            this.cb_states.TabIndex = 5;
             // 
             // Col1_tag
             // 
@@ -613,6 +676,7 @@
             this.flowLayoutPanel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.flowLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Borrow)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
@@ -646,7 +710,6 @@
         private System.Windows.Forms.Button bt_changeReader;
         private System.Windows.Forms.Button bt_delReader;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox tb_Pid;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox tb_Bid;
@@ -667,11 +730,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_AllNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cb_states;
         private System.Windows.Forms.Button bt_Search;
+        private System.Windows.Forms.TextBox tb_time;
+        private System.Windows.Forms.Button bt_Null;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
     }
 }
 
