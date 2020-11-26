@@ -63,7 +63,7 @@ namespace 图书管理系统
                     }
                     else
                     {
-                        throw new Exception("入库失败！");
+                        throw new Exception("出库失败！");
                     }
                 }
                 else
