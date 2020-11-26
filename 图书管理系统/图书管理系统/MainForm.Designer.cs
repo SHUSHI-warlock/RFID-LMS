@@ -59,7 +59,12 @@
             this.bt_changeReader = new System.Windows.Forms.Button();
             this.bt_delReader = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cb_states = new System.Windows.Forms.ComboBox();
+            this.GridView_Borrow = new System.Windows.Forms.DataGridView();
             this.Col_ReaderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col_BookId2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Col3_StartDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,16 +73,11 @@
             this.Col_IsReturn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tb_Pid = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tb_Bid = new System.Windows.Forms.TextBox();
             this.bt_Search = new System.Windows.Forms.Button();
+            this.Col1_tag = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GridView_Books)).BeginInit();
@@ -86,9 +86,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.flowLayoutPanel3.SuspendLayout();
             this.flowLayoutPanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Borrow)).BeginInit();
+            this.flowLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -113,7 +113,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "图书信息管理";
             this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // GridView_Books
             // 
@@ -405,7 +404,7 @@
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanel4);
-            this.tabPage3.Controls.Add(this.dataGridView2);
+            this.tabPage3.Controls.Add(this.GridView_Borrow);
             this.tabPage3.Controls.Add(this.flowLayoutPanel3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
@@ -414,25 +413,76 @@
             this.tabPage3.Text = "借阅信息管理";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // flowLayoutPanel4
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.flowLayoutPanel4.Controls.Add(this.label3);
+            this.flowLayoutPanel4.Controls.Add(this.dateTimePicker);
+            this.flowLayoutPanel4.Controls.Add(this.label4);
+            this.flowLayoutPanel4.Controls.Add(this.cb_states);
+            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 75);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(1113, 34);
+            this.flowLayoutPanel4.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label3.Location = new System.Drawing.Point(3, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(133, 31);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "借阅日期:";
+            // 
+            // dateTimePicker
+            // 
+            this.dateTimePicker.CustomFormat = "yyyy-mm-dd";
+            this.dateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker.Location = new System.Drawing.Point(142, 3);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(186, 25);
+            this.dateTimePicker.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label4.Location = new System.Drawing.Point(334, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(131, 31);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "当前状态:";
+            // 
+            // cb_states
+            // 
+            this.cb_states.FormattingEnabled = true;
+            this.cb_states.Items.AddRange(new object[] {
+            "借阅中",
+            "已归还",
+            "已超时"});
+            this.cb_states.Location = new System.Drawing.Point(471, 3);
+            this.cb_states.Name = "cb_states";
+            this.cb_states.Size = new System.Drawing.Size(206, 23);
+            this.cb_states.TabIndex = 5;
+            // 
+            // GridView_Borrow
+            // 
+            this.GridView_Borrow.AllowUserToAddRows = false;
+            this.GridView_Borrow.AllowUserToDeleteRows = false;
+            this.GridView_Borrow.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GridView_Borrow.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Col_ReaderID,
             this.Col_BookId2,
             this.Col3_StartDay,
             this.Col3_Deadline,
             this.Col3_ReadDay,
             this.Col_IsReturn});
-            this.dataGridView2.Location = new System.Drawing.Point(7, 109);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 27;
-            this.dataGridView2.Size = new System.Drawing.Size(1071, 410);
-            this.dataGridView2.TabIndex = 1;
+            this.GridView_Borrow.Location = new System.Drawing.Point(7, 109);
+            this.GridView_Borrow.Name = "GridView_Borrow";
+            this.GridView_Borrow.ReadOnly = true;
+            this.GridView_Borrow.RowHeadersWidth = 51;
+            this.GridView_Borrow.RowTemplate.Height = 27;
+            this.GridView_Borrow.Size = new System.Drawing.Size(1071, 410);
+            this.GridView_Borrow.TabIndex = 1;
             // 
             // Col_ReaderID
             // 
@@ -485,9 +535,9 @@
             // flowLayoutPanel3
             // 
             this.flowLayoutPanel3.Controls.Add(this.label11);
-            this.flowLayoutPanel3.Controls.Add(this.textBox5);
+            this.flowLayoutPanel3.Controls.Add(this.tb_Pid);
             this.flowLayoutPanel3.Controls.Add(this.label12);
-            this.flowLayoutPanel3.Controls.Add(this.textBox6);
+            this.flowLayoutPanel3.Controls.Add(this.tb_Bid);
             this.flowLayoutPanel3.Controls.Add(this.bt_Search);
             this.flowLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
@@ -502,14 +552,14 @@
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(133, 31);
             this.label11.TabIndex = 0;
-            this.label11.Text = "读者ID:";
+            this.label11.Text = "读者号：";
             // 
-            // textBox5
+            // tb_Pid
             // 
-            this.textBox5.Location = new System.Drawing.Point(142, 3);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(186, 25);
-            this.textBox5.TabIndex = 1;
+            this.tb_Pid.Location = new System.Drawing.Point(142, 3);
+            this.tb_Pid.Name = "tb_Pid";
+            this.tb_Pid.Size = new System.Drawing.Size(186, 25);
+            this.tb_Pid.TabIndex = 1;
             // 
             // label12
             // 
@@ -518,69 +568,14 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(131, 31);
             this.label12.TabIndex = 2;
-            this.label12.Text = "书号:";
+            this.label12.Text = "图书号：";
             // 
-            // textBox6
+            // tb_Bid
             // 
-            this.textBox6.Location = new System.Drawing.Point(471, 3);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(206, 25);
-            this.textBox6.TabIndex = 3;
-            // 
-            // Col1_tag
-            // 
-            this.Col1_tag.MinimumWidth = 6;
-            this.Col1_tag.Name = "Col1_tag";
-            this.Col1_tag.Width = 125;
-            // 
-            // flowLayoutPanel4
-            // 
-            this.flowLayoutPanel4.Controls.Add(this.label3);
-            this.flowLayoutPanel4.Controls.Add(this.dateTimePicker2);
-            this.flowLayoutPanel4.Controls.Add(this.label4);
-            this.flowLayoutPanel4.Controls.Add(this.comboBox1);
-            this.flowLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(0, 75);
-            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(1113, 34);
-            this.flowLayoutPanel4.TabIndex = 2;
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label3.Location = new System.Drawing.Point(3, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 31);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "借阅日期:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(142, 3);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(186, 25);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label4.Location = new System.Drawing.Point(334, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 31);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "状态:";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "借阅中",
-            "已还",
-            "超时未还"});
-            this.comboBox1.Location = new System.Drawing.Point(471, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(206, 23);
-            this.comboBox1.TabIndex = 5;
+            this.tb_Bid.Location = new System.Drawing.Point(471, 3);
+            this.tb_Bid.Name = "tb_Bid";
+            this.tb_Bid.Size = new System.Drawing.Size(206, 25);
+            this.tb_Bid.TabIndex = 3;
             // 
             // bt_Search
             // 
@@ -590,6 +585,13 @@
             this.bt_Search.TabIndex = 7;
             this.bt_Search.Text = "查询";
             this.bt_Search.UseVisualStyleBackColor = true;
+            this.bt_Search.Click += new System.EventHandler(this.bt_Search_Click);
+            // 
+            // Col1_tag
+            // 
+            this.Col1_tag.MinimumWidth = 6;
+            this.Col1_tag.Name = "Col1_tag";
+            this.Col1_tag.Width = 125;
             // 
             // MainForm
             // 
@@ -610,10 +612,10 @@
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.flowLayoutPanel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.GridView_Borrow)).EndInit();
             this.flowLayoutPanel3.ResumeLayout(false);
             this.flowLayoutPanel3.PerformLayout();
-            this.flowLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -645,12 +647,12 @@
         private System.Windows.Forms.Button bt_delReader;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox tb_Pid;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox tb_Bid;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col2_Password;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView GridView_Borrow;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_ReaderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col_BookId2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Col3_StartDay;
@@ -666,9 +668,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Col1_NowNum;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cb_states;
         private System.Windows.Forms.Button bt_Search;
     }
 }

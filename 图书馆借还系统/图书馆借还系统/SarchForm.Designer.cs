@@ -155,6 +155,7 @@
             this.GridView_Sch.Location = new System.Drawing.Point(41, 80);
             this.GridView_Sch.Name = "GridView_Sch";
             this.GridView_Sch.ReadOnly = true;
+            this.GridView_Sch.RowHeadersWidth = 51;
             this.GridView_Sch.RowTemplate.Height = 27;
             this.GridView_Sch.Size = new System.Drawing.Size(746, 340);
             this.GridView_Sch.TabIndex = 3;
@@ -162,44 +163,58 @@
             // Col_Reader
             // 
             this.Col_Reader.HeaderText = "读者ID";
+            this.Col_Reader.MinimumWidth = 6;
             this.Col_Reader.Name = "Col_Reader";
             this.Col_Reader.ReadOnly = true;
+            this.Col_Reader.Width = 125;
             // 
             // Col_BookId
             // 
             this.Col_BookId.HeaderText = "书号";
+            this.Col_BookId.MinimumWidth = 6;
             this.Col_BookId.Name = "Col_BookId";
             this.Col_BookId.ReadOnly = true;
+            this.Col_BookId.Width = 125;
             // 
             // Col_BookName
             // 
             this.Col_BookName.HeaderText = "书名";
+            this.Col_BookName.MinimumWidth = 6;
             this.Col_BookName.Name = "Col_BookName";
             this.Col_BookName.ReadOnly = true;
+            this.Col_BookName.Width = 125;
             // 
             // Col_Start
             // 
             this.Col_Start.HeaderText = "借阅日期";
+            this.Col_Start.MinimumWidth = 6;
             this.Col_Start.Name = "Col_Start";
             this.Col_Start.ReadOnly = true;
+            this.Col_Start.Width = 125;
             // 
             // Col_Deadline
             // 
             this.Col_Deadline.HeaderText = "借阅期限";
+            this.Col_Deadline.MinimumWidth = 6;
             this.Col_Deadline.Name = "Col_Deadline";
             this.Col_Deadline.ReadOnly = true;
+            this.Col_Deadline.Width = 125;
             // 
             // Col_ReadDay
             // 
             this.Col_ReadDay.HeaderText = "借阅天数";
+            this.Col_ReadDay.MinimumWidth = 6;
             this.Col_ReadDay.Name = "Col_ReadDay";
             this.Col_ReadDay.ReadOnly = true;
+            this.Col_ReadDay.Width = 125;
             // 
             // Col_Status
             // 
             this.Col_Status.HeaderText = "借阅状态";
+            this.Col_Status.MinimumWidth = 6;
             this.Col_Status.Name = "Col_Status";
             this.Col_Status.ReadOnly = true;
+            this.Col_Status.Width = 125;
             // 
             // SarchForm
             // 
