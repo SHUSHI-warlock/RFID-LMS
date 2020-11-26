@@ -139,7 +139,9 @@ namespace 图书管理系统
         //读取标签按钮
         private void bt_readtag_Click(object sender, EventArgs e)
         {
-
+            FileReader fileReader = new FileReader();
+            BookLabel bookLabel = fileReader.GetReader();
+            this.tb_tagtext.Text = bookLabel.ID.ToString();
         }
 
         private void tb_bookid_TextChanged(object sender, EventArgs e)

@@ -156,7 +156,7 @@ namespace 图书馆借还系统
         //提交按钮
         private void Submmit_Click(object sender, EventArgs e)
         {
-            if(BookList==null)
+            if (BookList == null)
             {
                 MessageBox.Show("请先读取书籍后再提交！");
                 return;

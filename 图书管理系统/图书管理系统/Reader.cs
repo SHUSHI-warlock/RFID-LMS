@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
-namespace 图书馆借还系统
+
+namespace 图书管理系统
 {
     class BookLabel
     {

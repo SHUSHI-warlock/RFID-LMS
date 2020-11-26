@@ -120,7 +120,7 @@ namespace 图书管理系统
 
         //借阅信息管理
         #region
-        //借阅信息查询按钮点击函数
+            //借阅信息查询按钮点击函数
             private void bt_Search_Click(object sender, EventArgs e)
             {
                 SqlConnection conn = null;
