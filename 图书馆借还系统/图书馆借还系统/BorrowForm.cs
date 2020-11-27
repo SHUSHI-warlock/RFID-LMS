@@ -17,6 +17,9 @@ namespace 图书馆借还系统
         string pId = "";
         List<BookLabel> BookList = null;
 
+        //读取书籍信息
+        IReader reader;
+
         SqlDataAdapter da = new SqlDataAdapter();
         DataSet DS = new DataSet();
 
@@ -25,6 +28,8 @@ namespace 图书馆借还系统
             main = MainWin;
             InitializeComponent();
 
+            //reader = new FileReader
+            reader = new RFIDReader();
         }
 
         public void ShowMyWin(string UserId)
@@ -52,8 +57,7 @@ namespace 图书馆借还系统
                 MessageBox.Show("请输入借书数量!");
                 return;
             }
-            //读取书籍信息
-            FileReader reader = new FileReader();
+            
             
             if (BookList == null)
                 BookList = new List<BookLabel>();
@@ -163,12 +167,11 @@ namespace 图书馆借还系统
             }
 
             //先写卡
-            FileReader fileReader = new FileReader();
             for (int i = 0; i < BookList.Count(); i++)
             {
                 BookList[i].SIG = false;
             }
-            if (!fileReader.SetReader(BookList))
+            if (!reader.SetReader(BookList))
             {
                 MessageBox.Show("失败！请勿移动书本！请重新读取后尝试！");
                 return;
@@ -185,8 +188,7 @@ namespace 图书馆借还系统
 
             //新建连接对象
             SqlConnection conn =SqlConnect.getConn();
-            //拼接命令字符串
-
+            //借阅记录入库
             for (int i = 0; i < GridView_Borrow.Rows.Count; i++)
             {
                 labelId = GridView_Borrow.Rows[i].Cells["Col1_Label"].Value.ToString();
@@ -217,8 +219,31 @@ namespace 图书馆借还系统
                 }
             }
 
+            //图书馆藏数-1
+            for (int i = 0; i < GridView_Borrow.Rows.Count; i++)
+            {
+                bookId = GridView_Borrow.Rows[i].Cells["Col1_BookId"].Value.ToString();
 
-            MessageBox.Show("借阅成功!点击退出登录!");
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "updata  T_Book set B_CountNow = B_CountNow-1 where B_Id ='" + bookId + "'";
+                    //MessageBox.Show(cmd.CommandText); //for test
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    Console.WriteLine("更新图书数目失败！");
+                }
+                finally
+                {
+                    if (conn != null)
+                        conn.Close();
+                }
+            }
+                MessageBox.Show("借阅成功!点击退出登录!");
             //返回主界面
             main.ReturnMainWin();
 

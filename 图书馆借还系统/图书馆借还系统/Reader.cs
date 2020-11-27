@@ -5,9 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.IO.Ports;
+
 namespace 图书馆借还系统
 {
-    class BookLabel
+    public class BookLabel
     {
         string id;
         bool isReturn;
@@ -28,22 +30,63 @@ namespace 图书馆借还系统
             get{return isReturn; }
         }
     }
-    interface Reader
+    public interface IReader
     {
         BookLabel GetReader();
         List<BookLabel> GetReader(int n);
         bool SetReader(BookLabel book);
         bool SetReader(List<BookLabel> books);
     }
-    class RFIDReader : Reader
+    class RFIDReader : IReader
     {
+        SerialPort COM = null;
+        bool PortExist;
+       
+        //SerialPortManager _spManager;
+
+        public RFIDReader()
+        {
+            COM = new SerialPort();
+            string[] ports = SerialPort.GetPortNames();
+            if(ports.Length==0)
+            {
+                PortExist = false;
+            }
+            else
+            {
+                PortExist = true;
+                COM.PortName = ports[0];
+                COM.BaudRate = 9600;
+            }
+        }
+
+        //解析标签内容
+        private BookLabel PraseRFID2Label(string fileName)
+        {
+            string Label = fileName.Substring(6, 10);
+            return new BookLabel(Label, true);
+        }
+        private string PraseLabel2RFID(BookLabel label)
+        {
+            string newfile = label.ID;
+            return newfile;
+        }
+
         public BookLabel GetReader()
         {
-            return null;
+            COM.Open();
+            string labels = COM.ReadLine();
+            COM.Close();
+            return PraseRFID2Label(labels);
         }
         public List<BookLabel> GetReader(int n)
         {
-            return null;
+            List<BookLabel> books = new List<BookLabel>();
+            BookLabel a = GetReader();
+            if (a == null)
+                return null;
+            books.Add(a);
+            return books;
         }
         public bool SetReader(BookLabel book)
         {
@@ -54,7 +97,8 @@ namespace 图书馆借还系统
             return true;
         }
     }
-    class FileReader : Reader
+
+    class FileReader : IReader
     {
         //读取标签的文件夹
         string readerFolder;
@@ -166,4 +210,5 @@ namespace 图书馆借还系统
             return true;
         }
     }
+  
 }

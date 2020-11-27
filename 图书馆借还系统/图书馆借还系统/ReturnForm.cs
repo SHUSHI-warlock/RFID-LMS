@@ -16,6 +16,8 @@ namespace 图书馆借还系统
         Main main;
 
         List<BookLabel> BookList = null;
+        //读取书籍信息
+        IReader reader;
 
         SqlDataAdapter da = new SqlDataAdapter();
         DataSet DS = new DataSet();
@@ -24,6 +26,7 @@ namespace 图书馆借还系统
         {
             main = MainWin;
             InitializeComponent();
+            reader = new FileReader();
         }
 
         public void ShowMyWin()
@@ -48,8 +51,7 @@ namespace 图书馆借还系统
                 MessageBox.Show("请输入还书数量!");
                 return;
             }
-            //读取书籍信息
-            FileReader reader = new FileReader();
+            
 
             if (BookList == null)
                 BookList = new List<BookLabel>();
@@ -164,12 +166,11 @@ namespace 图书馆借还系统
             }
 
             //先写卡
-            FileReader fileReader = new FileReader();
             for (int i = 0; i < BookList.Count(); i++)
             {
                 BookList[i].SIG = true;
             }
-            if(!fileReader.SetReader(BookList))
+            if(!reader.SetReader(BookList))
             {
                 MessageBox.Show("写标签失败！请不要在操作期间移动书本！");
                 return;
@@ -197,6 +198,31 @@ namespace 图书馆借还系统
             }
             
             conn.Close();
+
+            //图书馆藏数-1
+            for (int i = 0; i < GridView_Return.Rows.Count; i++)
+            {
+                string bookId = GridView_Return.Rows[i].Cells["Col1_BookId"].Value.ToString();
+
+                try
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conn;
+                    cmd.CommandText = "updata  T_Book set B_CountNow = B_CountNow+1 where B_Id ='" + bookId + "'";
+                    //MessageBox.Show(cmd.CommandText); //for test
+                    cmd.ExecuteNonQuery();
+                }
+                catch
+                {
+                    Console.WriteLine("更新图书数目失败！");
+                }
+                finally
+                {
+                    if (conn != null)
+                        conn.Close();
+                }
+            }
 
             MessageBox.Show("还书成功!点击退出登录!");
             //返回主界面
