@@ -13,6 +13,8 @@ namespace 图书管理系统
 {
     public partial class MainForm : Form
     {
+
+
         //构造
         public MainForm()
         {
@@ -420,7 +422,7 @@ namespace 图书管理系统
                     return;
                 }
                 //获取DataGridView控件中选中行的编号列的值
-                int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
+                string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
                 SqlConnection conn = SqlConnect.getConn();
                 try
                 {

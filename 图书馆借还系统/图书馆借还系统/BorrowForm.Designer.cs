@@ -45,29 +45,30 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(44, 35);
+            this.label1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(120, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.Size = new System.Drawing.Size(194, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "本次借书本数:";
             // 
             // BookNum
             // 
-            this.BookNum.Location = new System.Drawing.Point(190, 35);
+            this.BookNum.Font = new System.Drawing.Font("宋体", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BookNum.Location = new System.Drawing.Point(320, 31);
             this.BookNum.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.BookNum.Name = "BookNum";
-            this.BookNum.Size = new System.Drawing.Size(120, 25);
+            this.BookNum.Size = new System.Drawing.Size(143, 34);
             this.BookNum.TabIndex = 1;
             // 
             // button_ReadInfo
             // 
-            this.button_ReadInfo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_ReadInfo.Location = new System.Drawing.Point(521, 35);
+            this.button_ReadInfo.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_ReadInfo.Location = new System.Drawing.Point(744, 33);
             this.button_ReadInfo.Name = "button_ReadInfo";
             this.button_ReadInfo.Size = new System.Drawing.Size(202, 68);
             this.button_ReadInfo.TabIndex = 2;
@@ -84,11 +85,11 @@
             this.Col1_Label,
             this.Col1_BookId,
             this.Col1_Time});
-            this.GridView_Borrow.Location = new System.Drawing.Point(48, 120);
+            this.GridView_Borrow.Location = new System.Drawing.Point(125, 144);
             this.GridView_Borrow.Name = "GridView_Borrow";
             this.GridView_Borrow.ReadOnly = true;
             this.GridView_Borrow.RowTemplate.Height = 27;
-            this.GridView_Borrow.Size = new System.Drawing.Size(675, 238);
+            this.GridView_Borrow.Size = new System.Drawing.Size(821, 357);
             this.GridView_Borrow.TabIndex = 3;
             // 
             // Col1_BookName
@@ -117,8 +118,8 @@
             // 
             // Submmit
             // 
-            this.Submmit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Submmit.Location = new System.Drawing.Point(212, 393);
+            this.Submmit.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Submmit.Location = new System.Drawing.Point(252, 564);
             this.Submmit.Name = "Submmit";
             this.Submmit.Size = new System.Drawing.Size(133, 45);
             this.Submmit.TabIndex = 5;
@@ -128,8 +129,8 @@
             // 
             // button_return
             // 
-            this.button_return.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_return.Location = new System.Drawing.Point(447, 393);
+            this.button_return.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_return.Location = new System.Drawing.Point(670, 564);
             this.button_return.Name = "button_return";
             this.button_return.Size = new System.Drawing.Size(118, 45);
             this.button_return.TabIndex = 6;

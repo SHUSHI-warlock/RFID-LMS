@@ -13,9 +13,11 @@ namespace 图书管理系统
 {
     public partial class delBookForm : Form
     {
+        IReader reader ;
         public delBookForm()
         {
             InitializeComponent();
+            reader = new FileReader();
         }
         //加载函数
         private void delBookForm_Load(object sender, EventArgs e)
@@ -85,8 +87,7 @@ namespace 图书管理系统
         //读取标签按钮
         private void button3_Click(object sender, EventArgs e)
         {
-            FileReader fileReader = new FileReader();
-            BookLabel bookLabel = fileReader.GetReader();
+            BookLabel bookLabel = reader.GetReader();
             this.tb_tagtext.Text = bookLabel.ID.ToString();
         }
     }

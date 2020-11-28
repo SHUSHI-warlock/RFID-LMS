@@ -36,9 +36,10 @@
             // 
             // button_B
             // 
-            this.button_B.Location = new System.Drawing.Point(96, 251);
+            this.button_B.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_B.Location = new System.Drawing.Point(111, 251);
             this.button_B.Name = "button_B";
-            this.button_B.Size = new System.Drawing.Size(120, 119);
+            this.button_B.Size = new System.Drawing.Size(200, 200);
             this.button_B.TabIndex = 0;
             this.button_B.Text = "借书";
             this.button_B.UseVisualStyleBackColor = true;
@@ -46,9 +47,10 @@
             // 
             // button_R
             // 
-            this.button_R.Location = new System.Drawing.Point(323, 251);
+            this.button_R.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_R.Location = new System.Drawing.Point(415, 251);
             this.button_R.Name = "button_R";
-            this.button_R.Size = new System.Drawing.Size(120, 119);
+            this.button_R.Size = new System.Drawing.Size(200, 200);
             this.button_R.TabIndex = 1;
             this.button_R.Text = "还书";
             this.button_R.UseVisualStyleBackColor = true;
@@ -56,9 +58,10 @@
             // 
             // button_S
             // 
-            this.button_S.Location = new System.Drawing.Point(538, 251);
+            this.button_S.Font = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_S.Location = new System.Drawing.Point(704, 251);
             this.button_S.Name = "button_S";
-            this.button_S.Size = new System.Drawing.Size(120, 119);
+            this.button_S.Size = new System.Drawing.Size(237, 200);
             this.button_S.TabIndex = 2;
             this.button_S.Text = "查看借还记录";
             this.button_S.UseVisualStyleBackColor = true;
@@ -66,13 +69,15 @@
             // 
             // richTextBox1
             // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.Info;
             this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.richTextBox1.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.richTextBox1.Enabled = false;
+            this.richTextBox1.Font = new System.Drawing.Font("华文行楷", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.richTextBox1.Location = new System.Drawing.Point(0, 0);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(1062, 96);
             this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "欢迎使用借书系统";
+            this.richTextBox1.Text = "                                  欢迎使用借阅系统";
             // 
             // Main
             // 

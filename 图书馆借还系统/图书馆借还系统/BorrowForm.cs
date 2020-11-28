@@ -28,8 +28,8 @@ namespace 图书馆借还系统
             main = MainWin;
             InitializeComponent();
 
-            //reader = new FileReader
-            reader = new RFIDReader();
+            reader = new FileReader();
+            //reader = new RFIDReader();
         }
 
         public void ShowMyWin(string UserId)

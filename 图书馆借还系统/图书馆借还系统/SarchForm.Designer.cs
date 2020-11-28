@@ -130,10 +130,10 @@
             // 
             // button_Return
             // 
-            this.button_Return.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_Return.Location = new System.Drawing.Point(363, 426);
+            this.button_Return.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_Return.Location = new System.Drawing.Point(474, 581);
             this.button_Return.Name = "button_Return";
-            this.button_Return.Size = new System.Drawing.Size(96, 36);
+            this.button_Return.Size = new System.Drawing.Size(107, 42);
             this.button_Return.TabIndex = 2;
             this.button_Return.Text = "返回";
             this.button_Return.UseVisualStyleBackColor = true;
@@ -152,12 +152,12 @@
             this.Col_Deadline,
             this.Col_ReadDay,
             this.Col_Status});
-            this.GridView_Sch.Location = new System.Drawing.Point(41, 80);
+            this.GridView_Sch.Location = new System.Drawing.Point(41, 84);
             this.GridView_Sch.Name = "GridView_Sch";
             this.GridView_Sch.ReadOnly = true;
             this.GridView_Sch.RowHeadersWidth = 51;
             this.GridView_Sch.RowTemplate.Height = 27;
-            this.GridView_Sch.Size = new System.Drawing.Size(746, 340);
+            this.GridView_Sch.Size = new System.Drawing.Size(976, 453);
             this.GridView_Sch.TabIndex = 3;
             // 
             // Col_Reader

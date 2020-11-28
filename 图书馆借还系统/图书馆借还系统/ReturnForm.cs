@@ -26,6 +26,7 @@ namespace 图书馆借还系统
         {
             main = MainWin;
             InitializeComponent();
+            //reader = new FileReader();
             reader = new FileReader();
         }
 

@@ -88,13 +88,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(498, 302);
+            this.ClientSize = new System.Drawing.Size(502, 303);
             this.Controls.Add(this.Password);
             this.Controls.Add(this.Username);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Name = "LoginForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "图书馆管理软件";
             this.ResumeLayout(false);
             this.PerformLayout();

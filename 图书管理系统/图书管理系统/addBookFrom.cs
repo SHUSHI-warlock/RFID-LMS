@@ -13,9 +13,14 @@ namespace 图书管理系统
 {
     public partial class addBookFrom : Form
     {
+        IReader reader;
+
         public addBookFrom()
         {
             InitializeComponent();
+            reader = new FileReader();
+            //启用串口读取
+            //reader = new RFIDReader();
         }
         //加载函数
         private void addBookFrom_Load(object sender, EventArgs e)
@@ -139,8 +144,7 @@ namespace 图书管理系统
         //读取标签按钮
         private void bt_readtag_Click(object sender, EventArgs e)
         {
-            FileReader fileReader = new FileReader();
-            BookLabel bookLabel = fileReader.GetReader();
+            BookLabel bookLabel = reader.GetReader();
             this.tb_tagtext.Text = bookLabel.ID.ToString();
         }
 

@@ -57,11 +57,11 @@
             this.Col1_Deadline,
             this.Col1_Status,
             this.Col1_Label});
-            this.GridView_Return.Location = new System.Drawing.Point(58, 114);
+            this.GridView_Return.Location = new System.Drawing.Point(78, 130);
             this.GridView_Return.Name = "GridView_Return";
             this.GridView_Return.ReadOnly = true;
             this.GridView_Return.RowTemplate.Height = 27;
-            this.GridView_Return.Size = new System.Drawing.Size(733, 238);
+            this.GridView_Return.Size = new System.Drawing.Size(914, 380);
             this.GridView_Return.TabIndex = 10;
             // 
             // Col1_Reader
@@ -108,8 +108,8 @@
             // 
             // button_ReadInfo
             // 
-            this.button_ReadInfo.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_ReadInfo.Location = new System.Drawing.Point(531, 30);
+            this.button_ReadInfo.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_ReadInfo.Location = new System.Drawing.Point(790, 33);
             this.button_ReadInfo.Name = "button_ReadInfo";
             this.button_ReadInfo.Size = new System.Drawing.Size(202, 68);
             this.button_ReadInfo.TabIndex = 9;
@@ -119,30 +119,31 @@
             // 
             // BookNum
             // 
-            this.BookNum.Location = new System.Drawing.Point(200, 30);
+            this.BookNum.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.BookNum.Location = new System.Drawing.Point(273, 34);
             this.BookNum.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.BookNum.Name = "BookNum";
-            this.BookNum.Size = new System.Drawing.Size(120, 25);
+            this.BookNum.Size = new System.Drawing.Size(130, 30);
             this.BookNum.TabIndex = 8;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label1.Location = new System.Drawing.Point(54, 30);
+            this.label1.Font = new System.Drawing.Font("宋体", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.label1.Location = new System.Drawing.Point(73, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 20);
+            this.label1.Size = new System.Drawing.Size(194, 28);
             this.label1.TabIndex = 7;
             this.label1.Text = "本次还书本数:";
             // 
             // button_Return
             // 
-            this.button_Return.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button_Return.Location = new System.Drawing.Point(457, 388);
+            this.button_Return.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button_Return.Location = new System.Drawing.Point(668, 563);
             this.button_Return.Name = "button_Return";
             this.button_Return.Size = new System.Drawing.Size(118, 45);
             this.button_Return.TabIndex = 13;
@@ -152,8 +153,8 @@
             // 
             // Submmit
             // 
-            this.Submmit.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.Submmit.Location = new System.Drawing.Point(222, 388);
+            this.Submmit.Font = new System.Drawing.Font("宋体", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.Submmit.Location = new System.Drawing.Point(247, 563);
             this.Submmit.Name = "Submmit";
             this.Submmit.Size = new System.Drawing.Size(133, 45);
             this.Submmit.TabIndex = 12;
